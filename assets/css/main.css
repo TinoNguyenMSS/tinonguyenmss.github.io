@@ -1,0 +1,99 @@
+/* Midnight Signal — Global Theme */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0c10;
+    color: #e6e6e6;
+    line-height: 1.6;
+    background-image: url('../img/texture-noise.png');
+    background-size: cover;
+}
+
+/* Neon Accents */
+:root {
+    --neon-blue: #6bdcff;
+    --neon-pink: #ff357a;
+    --deep-ink: #1b1b1d;
+    --ink-stroke: #a98dd3;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    background: rgba(10, 10, 12, 0.86);
+    backdrop-filter: blur(6px);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--neon-blue);
+}
+
+nav a {
+    color: var(--neon-blue);
+    text-decoration: none;
+    margin: 0 18px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 6px var(--neon-pink);
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+    margin-bottom: 20px;
+}
+
+/* Calligraffiti Style */
+.calli {
+    font-family: "Old English Text MT", "Gothic", serif;
+    letter-spacing: 1px;
+    color: var(--ink-stroke);
+    text-shadow: 0 0 6px #43236f;
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 1.8s ease-out forwards;
+    opacity: 0;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Scanline effect */
+.scanline {
+    position: relative;
+}
+.scanline::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    animation: scan 4s linear infinite;
+}
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--neon-blue);
+    margin-top: 40px;
+    opacity: 0.7;
+}
