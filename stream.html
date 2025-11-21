@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Stream Broadcast</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <style>
+        .stream-hero {
+            padding: 100px 20px;
+            text-align: center;
+            color: #cde3ff;
+        }
+
+        .stream-title {
+            font-size: 3rem;
+            color: #7fd7ff;
+            text-shadow: 0 0 15px #00c8ff;
+            margin-bottom: 10px;
+        }
+
+        .stream-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .stream-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 2px solid #1fa3d9;
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+            border-radius: 8px;
+        }
+
+        .stream-info {
+            margin-top: 40px;
+            font-size: 1.1rem;
+            color: #cde3ff;
+            opacity: 0.9;
+        }
+
+        .highlight {
+            color: #7fd7ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="scanline">
+
+<nav>
+    <div class="logo calli">Midnight Signal</div>
+    <div>
+        <a href="/">Home</a>
+        <a href="art.html">Art</a>
+        <a href="stream.html">Stream</a>
+        <a href="products.html">Products</a>
+        <a href="creed.html">Creed</a>
+    </div>
+</nav>
+
+<section class="stream-hero">
+    <h1 class="stream-title">Midnight Signal Broadcast</h1>
+    <p class="stream-subtitle">A quiet frequency. A clear mind. A live transmission.</p>
+</section>
+
+<section class="stream-container">
+
+    <!-- TWITCH LIVESTREAM (PRIMARY) -->
+<h2 style="color:#7fd7ff;">Twitch Broadcast (Primary)</h2>
+    <iframe
+        src="https://player.twitch.tv/?channel=themidnightsignaler&parent=tinonguyenmss.github.io"
+        height="500"
+        width="100%"
+        allowfullscreen>
+    </iframe>
+
+    <br><br>
+
+    <!-- YOUTUBE BACKUP -->
+    <h2 style="color:#7fd7ff;">YouTube Backup Stream</h2>
+    <iframe
+        src="https://www.youtube.com/embed/live_stream?channel=UCqQ_8HBrxIxuNLST0AGSoSA&autoplay=1"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+
+    <div class="stream-info">
+        <p>Status: <span class="highlight">AUTO-DETECT</span> (Twitch first)</p>
+        <p>Next Broadcast: <span class="highlight">TBA</span></p>
+        <p>Tune into the frequency. When the purple light glows, I’m live.</p>
+    </div>
+
+</section>
+
+<footer>© Midnight Signal Studio</footer>
+</body>
+</html>
