@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art • Midnight Signal</title>
+
+<link rel="stylesheet" href="assets/css/main.css">
+
+<style>
+
+/* --- Two-Column Boutique Layout --- */
+.art-container {
+  width: 82%;
+  margin: 80px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.art-item {
+  position: relative;
+  background: #0d0d0d;
+  border: 1px solid #303030;
+  border-radius: 10px;
+  overflow: hidden;
+  transform: translateY(0px);
+  transition: transform 0.35s ease;
+}
+
+.art-item:hover img {
+  filter: brightness(1.15);
+  transform: scale(1.03);
+}
+
+.art-item img {
+  width: 100%;
+  display: block;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.art-caption {
+  padding: 16px;
+  background: #090909;
+  color: #cfcfcf;
+  font-size: 0.92rem;
+  border-top: 1px solid #2a2a2a;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+/* --- Gentle Parallax (2px–5px drift) --- */
+.art-item.parallax {
+  transition: transform 0.35s ease;
+}
+
+/* --- Mobile Layout --- */
+@media (max-width: 900px) {
+  .art-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* --- Modal Lightbox --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 92%;
+  max-height: 88%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.8);
+}
+
+.modal-close {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+</style>
+</head>
+
+<body class="scanline">
+
+<!-- NAV -->
+<nav>
+  <div class="logo calli">Midnight Signal</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="art.html" style="color:#7bd7ff; text-shadow:0 0 10px #7bd7ff;">Art</a>
+    <a href="stream.html">Stream</a>
+    <a href="products.html">Products</a>
+    <a href="creed.html">Creed</a>
+  </div>
+</nav>
+
+<header class="content-wrapper fade-in">
+  <h1 class="section-title">Art</h1>
+  <p class="calli" style="font-size:1.4rem;">The Archive of Written Rebellion.</p>
+</header>
+
+<!-- ART BOUTIQUE GALLERY -->
+<section class="art-container">
+
+  <!-- 1 -->
+  <div class="art-item parallax">
+    <img src="assets/img/write_think_resist_B2_speedball.jpg" alt="">
+    <div class="art-caption">
+      Watercolor using Speedball’s B-2 nib — outlined with Japanese Brush Pen (soft).
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="art-item parallax">
+    <img src="assets/img/fear_not_perfection.png" alt="">
+    <div class="art-caption">
+      Pelikan Royal Blue ink using Steel Brush.
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="art-item parallax">
+    <img src="assets/img/alphabet_ruling.jpg" alt="">
+    <div class="art-caption">
+      Black India Ink using self-invented ruling pen (the “Cola Pen”).
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="art-item parallax">
+    <img src="assets/img/wood_burning_fraktur_b_cap.jpg" alt="">
+    <div class="art-caption">
+      Stylized Fraktur “B” Capital — experimental wood-burning technique.
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="art-item parallax">
+    <img src="assets/img/anthonys_bday_gift_2024.png" alt="">
+    <div class="art-caption">
+      Premium Walnut Ink using Steel Brush (smallest size) — outlined digitally.
+    </div>
+  </div>
+
+</section>
+
+<!-- MODAL VIEWER -->
+<div id="modal" class="modal">
+  <span class="modal-close">&times;</span>
+  <img id="modal-img" src="">
+</div>
+
+<footer>
+  © Midnight Signal Studio — Transmission Active
+</footer>
+
+<div class="scanlines"></div>
+
+<script>
+// Gentle parallax scroll (2–5px)
+document.addEventListener('scroll', () => {
+  document.querySelectorAll('.parallax').forEach((item, i) => {
+    let drift = (window.scrollY * 0.005) * (i % 2 === 0 ? 1 : -1);
+    item.style.transform = `translateY(${drift}px)`;
+  });
+});
+
+// Modal viewer
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+
+document.querySelectorAll('.art-item img').forEach(img => {
+  img.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modalImg.src = img.src;
+  });
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+</script>
+
+</body>
+</html>
