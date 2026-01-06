@@ -8,6 +8,7 @@ body {
     line-height: 1.6;
     background-image: url('../img/texture-noise.png');
     background-size: cover;
+    font-size: 18px;              /* increased from default ~16px */
 }
 
 /* Neon Accents */
@@ -36,7 +37,7 @@ nav a {
     color: var(--neon-blue);
     text-decoration: none;
     margin: 0 18px;
-    font-size: 1.1rem;
+    font-size: 1.25rem;          /* was 1.1rem */
     transition: 0.3s;
 }
 
@@ -47,7 +48,7 @@ nav a:hover {
 
 /* Section Title */
 .section-title {
-    font-size: 2.6rem;
+    font-size: 3rem;             /* was 2.6rem */
     font-weight: 600;
     letter-spacing: 2px;
     color: var(--neon-blue);
