@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>REVIEW: The Wellness Cultiv8r — What I Found About Brain Decline</title>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <style>
+        /* ── Page-level overrides ── */
+        body {
+            font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+        }
+
+        /* ── HERO BAND ── */
+        .wc-hero {
+            padding: 80px 40px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, #0b0c10 0%, #0f1520 100%);
+            border-bottom: 1px solid rgba(107, 220, 255, 0.15);
+        }
+
+        .wc-eyebrow {
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--neon-pink);
+            margin-bottom: 16px;
+            opacity: 0.85;
+        }
+
+        .wc-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            max-width: 820px;
+            margin: 0 auto 24px;
+            text-shadow: 0 0 40px rgba(107,220,255,0.2);
+        }
+
+        .wc-headline em {
+            font-style: italic;
+            color: var(--neon-blue);
+        }
+
+        .wc-subhead {
+            font-size: 1.15rem;
+            color: #b0b8c8;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── MAIN CONTENT GRID ── */
+        .wc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 1100px;
+            margin: 72px auto;
+            padding: 0 40px;
+            align-items: start;
+        }
+
+        /* ── LEFT: VIDEO THUMBNAIL ── */
+        .wc-video-wrap {
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(107,220,255,0.25);
+            box-shadow: 0 0 40px rgba(107,220,255,0.08), 0 20px 60px rgba(0,0,0,0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .wc-video-wrap:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 60px rgba(107,220,255,0.18), 0 24px 70px rgba(0,0,0,0.7);
+        }
+
+        .wc-video-wrap img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Subtle neon frame pulse on hover */
+        .wc-video-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+            border: 1px solid var(--neon-blue);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .wc-video-wrap:hover::before {
+            opacity: 0.5;
+        }
+
+        .wc-click-hint {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 14px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--neon-blue);
+            z-index: 3;
+        }
+
+        /* ── RIGHT: COPY + CTA ── */
+        .wc-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .wc-copy-block {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(107,220,255,0.12);
+            border-left: 3px solid var(--neon-blue);
+            border-radius: 4px;
+            padding: 24px 28px;
+        }
+
+        .wc-copy-block p {
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #c8d4e0;
+        }
+
+        .wc-copy-block p + p {
+            margin-top: 14px;
+        }
+
+        .wc-copy-block .highlight {
+            color: var(--neon-blue);
+            font-weight: 600;
+        }
+
+        .wc-copy-block .tension {
+            color: var(--neon-pink);
+            font-weight: 600;
+        }
+
+        /* CTA Button */
+        .wc-cta {
+            display: block;
+            text-align: center;
+            padding: 20px 36px;
+            background: transparent;
+            border: 1px solid var(--neon-pink);
+            border-radius: 4px;
+            color: var(--neon-pink);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wc-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--neon-pink);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .wc-cta:hover::before {
+            opacity: 0.12;
+        }
+
+        .wc-cta:hover {
+            box-shadow: 0 0 24px rgba(255,53,122,0.35);
+            color: #fff;
+            text-shadow: 0 0 8px var(--neon-pink);
+        }
+
+        .wc-cta span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── BOTTOM IMAGE BAND ── */
+        .wc-bottom-band {
+            max-width: 1100px;
+            margin: 0 auto 80px;
+            padding: 0 40px;
+        }
+
+        .wc-brain-img-wrap {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(107,220,255,0.15);
+            box-shadow: 0 0 60px rgba(107,220,255,0.06);
+            position: relative;
+        }
+
+        .wc-brain-img-wrap img {
+            width: 100%;
+            display: block;
+            filter: brightness(0.75) saturate(0.8);
+        }
+
+        .wc-brain-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(11,12,16,0.5) 0%, rgba(107,220,255,0.04) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wc-brain-caption {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: rgba(255,255,255,0.85);
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+            line-height: 1.5;
+        }
+
+        /* ── DISCLAIMER ── */
+        .wc-disclaimer {
+            text-align: center;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.25);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            padding: 0 40px;
+            line-height: 1.6;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .wc-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+                gap: 32px;
+            }
+            .wc-hero {
+                padding: 60px 20px 40px;
+            }
+            .wc-bottom-band {
+                padding: 0 20px;
+            }
+        }
+
+        /* ── FADE IN STAGGER ── */
+        .wc-fade {
+            opacity: 0;
+            transform: translateY(18px);
+            animation: wcRise 0.9s ease forwards;
+        }
+        .wc-fade:nth-child(1) { animation-delay: 0.1s; }
+        .wc-fade:nth-child(2) { animation-delay: 0.3s; }
+        .wc-fade:nth-child(3) { animation-delay: 0.5s; }
+        .wc-fade:nth-child(4) { animation-delay: 0.7s; }
+
+        @keyframes wcRise {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="scanline">
+
+    <!-- NAV (mirrors index.html exactly + new link) -->
+    <nav>
+        <div class="logo calli">Midnight Signal</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/pages/art.html">Art</a>
+            <a href="/pages/services.html">Services</a>
+            <a href="/pages/products.html">Products</a>
+            <a href="/pages/food.html">Good/Bad Food</a>
+            <a href="/pages/creed.html">Creed</a>
+            <a href="/pages/wellness.html" style="color: var(--neon-pink); text-shadow: 0 0 6px var(--neon-pink);">Wellness</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="wc-hero">
+        <p class="wc-eyebrow wc-fade">The Wellness Cultiv8r &nbsp;·&nbsp; Honest Review</p>
+        <h1 class="wc-headline wc-fade">
+            REVIEW: What I Found About Brain Decline<br/>
+            <em>Changed Everything I Thought I Knew</em>
+        </h1>
+        <p class="wc-subhead wc-fade">
+            I went looking for real answers about why so many of us feel mentally slower than we used to.
+            What I found wasn't what I expected — and after reviewing it thoroughly, I couldn't keep it to myself.
+        </p>
+    </section>
+
+    <!-- MAIN GRID -->
+    <div class="wc-grid">
+
+        <!-- LEFT: Video Thumbnail linked to hoplink -->
+        <a href="https://hop.clickbank.net/?affiliate=cultiv8r&vendor=getneuro&pg=news"
+           target="_blank"
+           rel="noopener"
+           class="wc-video-wrap wc-fade"
+           aria-label="Watch the full discovery video">
+            <img src="../assets/img/videothumbIMG.png"
+                 alt="The Brain Wellness Podcast — Dr. Robert Anderson discovery video"/>
+            <div class="wc-click-hint">▶ &nbsp; Click to watch</div>
+        </a>
+
+        <!-- RIGHT: Copy + CTA -->
+        <div class="wc-copy">
+
+            <div class="wc-copy-block wc-fade">
+                <p>
+                    Most people assume the mental fog, the forgotten words, the slow mornings —
+                    are just <span class="tension">the price of getting older.</span>
+                </p>
+                <p>
+                    That assumption is exactly what I believed too — until I went deep
+                    on the research and reviewed what scientists have actually been finding.
+                </p>
+                <p>
+                    Researchers have been quietly studying something found in one of the most
+                    extreme environments on the planet —
+                    and what they're connecting it to has
+                    <span class="highlight">serious implications for how we think about brain health.</span>
+                </p>
+                <p>
+                    I reviewed this thoroughly before sharing it.
+                    Some things need to be heard in full to land the way they should.
+                    <span class="tension">This is one of them.</span>
+                </p>
+                <p style="font-size:0.82rem; color: rgba(255,255,255,0.28); margin-top:16px;">
+                    ※ I am compensated if you choose to purchase after clicking. This is my honest review.
+                </p>
+            </div>
+
+            <a href="https://hop.clickbank.net/?affiliate=cultiv8r&vendor=getneuro&pg=news"
+               target="_blank"
+               rel="noopener"
+               class="wc-cta wc-fade">
+                <span>→ &nbsp; Watch My Full Review</span>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- BOTTOM BRAIN IMAGE BAND -->
+    <div class="wc-bottom-band">
+        <div class="wc-brain-img-wrap">
+            <!-- Swap src below for your brain health image once added to assets/img/ -->
+            <img src="../assets/img/brain-health.jpg"
+                 alt="Brain health research visual"/>
+            <div class="wc-brain-overlay">
+                <p class="wc-brain-caption">
+                    "The brain is not destined to decline.<br/>
+                    But it does respond to what you give it."
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <p class="wc-disclaimer">
+        This page contains affiliate links. If you choose to purchase after clicking,
+        I may receive a commission at no extra cost to you.
+        Content is for informational purposes only and does not constitute medical advice.
+    </p>
+
+    <footer>
+        © Midnight Signal Studio — Transmission Active
+    </footer>
+
+</body>
+</html>
