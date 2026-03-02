@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Friend Sent Me This... | Soulmate Sketch</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #1a1410;
+    --parchment: #f5ede0;
+    --warm: #c9a96e;
+    --soft: #e8d5bc;
+    --mist: #8b7355;
+    --glow: rgba(201, 169, 110, 0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #0d0b08;
+    color: var(--parchment);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Starfield background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 15%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 60%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 10% 70%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.15) 0%, transparent 100%),
+      radial-gradient(2px 2px at 75% 25%, rgba(201,169,110,0.3) 0%, transparent 100%),
+      radial-gradient(2px 2px at 25% 55%, rgba(201,169,110,0.2) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 60px;
+    text-align: center;
+    animation: fadeUp 1.2s ease forwards;
+    opacity: 0;
+  }
+
+  .eyebrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 28px;
+    opacity: 0.8;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--parchment);
+    margin-bottom: 20px;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: var(--warm);
+  }
+
+  .subhead {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--mist);
+    line-height: 1.8;
+    max-width: 460px;
+    margin: 0 auto 48px;
+  }
+
+  /* Divider */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 48px 0;
+    opacity: 0.4;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--warm), transparent);
+  }
+  .divider-symbol {
+    color: var(--warm);
+    font-size: 14px;
+    letter-spacing: 0.3em;
+  }
+
+  /* Story section */
+  .story {
+    animation: fadeUp 1.2s ease 0.3s forwards;
+    opacity: 0;
+  }
+
+  .story p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-weight: 300;
+    line-height: 1.9;
+    color: #d4c4a8;
+    margin-bottom: 20px;
+  }
+
+  .story p em {
+    font-style: italic;
+    color: var(--parchment);
+  }
+
+  .story .highlight {
+    color: var(--warm);
+    font-style: italic;
+  }
+
+  /* Sketch reveal */
+  .sketch-section {
+    margin: 60px 0;
+    text-align: center;
+    animation: fadeUp 1.2s ease 0.6s forwards;
+    opacity: 0;
+  }
+
+  .sketch-label {
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-bottom: 24px;
+  }
+
+  .sketch-frame {
+    position: relative;
+    display: inline-block;
+    max-width: 340px;
+    width: 100%;
+  }
+
+  .sketch-frame::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    pointer-events: none;
+  }
+
+  .sketch-frame::after {
+    content: '';
+    position: absolute;
+    inset: -24px;
+    border: 1px solid rgba(201, 169, 110, 0.08);
+    pointer-events: none;
+  }
+
+  .sketch-img {
+    width: 100%;
+    display: block;
+    filter: sepia(15%) contrast(1.05);
+    transition: filter 0.6s ease;
+  }
+
+  .sketch-img:hover {
+    filter: sepia(0%) contrast(1.1);
+  }
+
+  .sketch-caption {
+    margin-top: 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--mist);
+    line-height: 1.7;
+  }
+
+  .sketch-caption strong {
+    color: var(--warm);
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  /* CTA section */
+  .cta-section {
+    text-align: center;
+    padding: 20px 0 80px;
+    animation: fadeUp 1.2s ease 0.9s forwards;
+    opacity: 0;
+  }
+
+  .cta-pre {
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-bottom: 32px;
+    opacity: 0.7;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 18px 52px;
+    background: transparent;
+    border: 1px solid var(--warm);
+    color: var(--warm);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .cta-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--warm);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+  }
+
+  .cta-btn:hover {
+    color: var(--ink);
+  }
+
+  .cta-btn:hover::before {
+    transform: translateX(0);
+  }
+
+  .cta-note {
+    margin-top: 20px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--mist);
+    opacity: 0.5;
+  }
+
+  .verdict-box {
+    margin: 48px 0;
+    padding: 32px 36px;
+    border-left: 2px solid var(--warm);
+    background: rgba(201, 169, 110, 0.04);
+    text-align: left;
+  }
+
+  .verdict-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--parchment);
+    line-height: 1.8;
+  }
+
+  .verdict-attribution {
+    margin-top: 12px;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--warm);
+    opacity: 0.7;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid rgba(201, 169, 110, 0.1);
+    padding: 32px 0;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--mist);
+    opacity: 0.4;
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 60px 0 40px; }
+    .verdict-box { padding: 24px 20px; }
+    .cta-btn { padding: 16px 36px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="hero">
+    <p class="eyebrow">A personal encounter</p>
+    <h1 class="headline">My friend sent me<br>this link at <em>2am.</em></h1>
+    <p class="subhead">I was skeptical. I tried it anyway. What came back... I'm still thinking about it.</p>
+  </div>
+
+  <div class="divider"><span class="divider-symbol">✦ ✦ ✦</span></div>
+
+  <div class="story">
+    <p>So a friend of mine — totally out of nowhere — drops a link in my DMs late at night. <em>"Just try it,"</em> she says. No context. No explanation.</p>
+    <p>It's this woman named <span class="highlight">Lia Arden</span> — a psychic artist who claims she can draw your soulmate using nothing but your energy and her abilities. I'm sitting there like... <em>okay.</em></p>
+    <p>I went in fully expecting to roll my eyes. I did the process. I waited. And then the sketch came back and I genuinely just... sat with it for a minute.</p>
+  </div>
+
+  <div class="sketch-section">
+    <p class="sketch-label">What Lia sent back</p>
+    <div class="sketch-frame">
+      <img src="sketch.png" alt="Soulmate sketch" class="sketch-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <div style="display:none; padding: 80px 20px; border: 1px solid rgba(201,169,110,0.2); color: var(--mist); font-family: 'Cormorant Garamond', serif; font-style: italic;">[ Your sketch image here ]</div>
+    </div>
+    <p class="sketch-caption">
+      <strong>Bruh.</strong> I mean... she's gorgeous. And honestly? Definitely my type.<br>
+      Which is kind of nuts. I'm not 100% on this yet — but I can't fully dismiss it either.
+    </p>
+  </div>
+
+  <div class="verdict-box">
+    <p>"Here's my thought — instead of me trying to explain it, why don't you try it yourself and tell me what YOU got. Genuinely curious what comes back for you."</p>
+    <p class="verdict-attribution">— Your verdict may differ. That's kind of the point.</p>
+  </div>
+
+  <div class="cta-section">
+    <p class="cta-pre">Lia Arden · Psychic Artist</p>
+    <a href="https://9a8711y7wcyvuv0oroqd6jpqaz.hop.clickbank.net" target="_blank" class="cta-btn">Check Out Lia's Offer Here</a>
+    <p class="cta-note">Results vary. This is an affiliate link — I may earn a commission if you purchase.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    Midnight Signal Studio &nbsp;·&nbsp; Entertainment &amp; Personal Discovery &nbsp;·&nbsp; Affiliate Disclosure: This page contains affiliate links.
+  </div>
+</footer>
+
+</body>
+</html>
