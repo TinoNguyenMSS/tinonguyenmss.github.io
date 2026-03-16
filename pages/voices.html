@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Voice Roster — Midnight Signal Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:         #0a0a0f;
+            --bg2:        #0f0f18;
+            --panel:      #13131e;
+            --border:     #2a2a3d;
+            --accent:     #7b5ea7;
+            --accent2:    #c084fc;
+            --glow:       #a855f7;
+            --female:     #e879a0;
+            --male:       #38bdf8;
+            --text:       #e2e0f0;
+            --muted:      #7a7890;
+            --scanline:   rgba(120,80,200,0.03);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 400;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* SCANLINE OVERLAY */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                var(--scanline) 0px,
+                transparent 1px,
+                transparent 3px
+            );
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* NOISE TEXTURE */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.4;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(10,10,15,0.95);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.1rem;
+            color: var(--accent2);
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 20px rgba(168,85,247,0.5);
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-left: 28px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent2); }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 90px 40px 60px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 600px; height: 300px;
+            background: radial-gradient(ellipse, rgba(123,94,167,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .transmission-tag {
+            display: inline-block;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 5px 16px;
+            margin-bottom: 24px;
+            animation: pulse-border 3s infinite;
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { border-color: var(--accent); color: var(--accent); }
+            50% { border-color: var(--glow); color: var(--glow); box-shadow: 0 0 12px rgba(168,85,247,0.3); }
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 0 0 40px rgba(168,85,247,0.3);
+        }
+
+        .hero h1 span {
+            color: var(--accent2);
+            text-shadow: 0 0 30px rgba(192,132,252,0.6);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 16px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .hero .paintbrush-note {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-top: 10px;
+            letter-spacing: 0.05em;
+        }
+
+        /* DIVIDER */
+        .signal-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 0 40px;
+        }
+
+        .signal-divider::before,
+        .signal-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .signal-divider span {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--muted);
+            letter-spacing: 0.2em;
+            white-space: nowrap;
+        }
+
+        /* GENDER LEGEND */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 50px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .legend-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.f { background: var(--female); box-shadow: 0 0 8px var(--female); }
+        .legend-dot.m { background: var(--male); box-shadow: 0 0 8px var(--male); }
+
+        /* VOICE GRID */
+        .voice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px 80px;
+        }
+
+        /* VOICE CARD */
+        .voice-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            padding: 32px;
+            position: relative;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            cursor: default;
+            overflow: hidden;
+        }
+
+        .voice-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            transition: opacity 0.3s;
+            opacity: 0.7;
+        }
+
+        .voice-card.female::before { background: linear-gradient(90deg, transparent, var(--female), transparent); }
+        .voice-card.male::before { background: linear-gradient(90deg, transparent, var(--male), transparent); }
+
+        .voice-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 40px rgba(123,94,167,0.2);
+        }
+
+        .voice-card.female:hover { border-color: var(--female); box-shadow: 0 8px 40px rgba(232,121,160,0.15); }
+        .voice-card.male:hover   { border-color: var(--male);   box-shadow: 0 8px 40px rgba(56,189,248,0.15); }
+
+        /* CARD OPTION BADGE */
+        .option-badge {
+            position: absolute;
+            top: 16px; right: 16px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            padding: 3px 10px;
+            border: 1px solid;
+            opacity: 0.6;
+        }
+
+        .female .option-badge { color: var(--female); border-color: var(--female); }
+        .male   .option-badge { color: var(--male);   border-color: var(--male); }
+
+        /* GENDER INDICATOR */
+        .gender-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .female .gender-dot { background: var(--female); box-shadow: 0 0 10px var(--female); }
+        .male   .gender-dot { background: var(--male);   box-shadow: 0 0 10px var(--male); }
+
+        /* VOICE NAME */
+        .voice-name {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+        }
+
+        .female .voice-name { color: var(--female); text-shadow: 0 0 20px rgba(232,121,160,0.4); }
+        .male   .voice-name { color: var(--male);   text-shadow: 0 0 20px rgba(56,189,248,0.4); }
+
+        /* VOICE DESCRIPTOR */
+        .voice-descriptor {
+            font-size: 0.85rem;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        /* CUSTOM AUDIO PLAYER */
+        .player-wrap {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .play-btn {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 14px;
+        }
+
+        .female .play-btn {
+            background: var(--female);
+            box-shadow: 0 0 16px rgba(232,121,160,0.4);
+        }
+
+        .male .play-btn {
+            background: var(--male);
+            box-shadow: 0 0 16px rgba(56,189,248,0.4);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-btn svg { pointer-events: none; }
+
+        /* PROGRESS */
+        .progress-wrap {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 3px;
+            background: var(--border);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .female .progress-bar-fill { background: var(--female); }
+        .male   .progress-bar-fill { background: var(--male); }
+
+        .time-display {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--muted);
+            letter-spacing: 0.1em;
+        }
+
+        /* BOTTOM NOTE */
+        .bottom-note {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
+        }
+
+        .bottom-note .tag {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 0.2em;
+            margin-bottom: 16px;
+        }
+
+        .bottom-note p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .bottom-note p strong {
+            color: var(--accent2);
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 60px;
+            text-align: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--muted);
+            letter-spacing: 0.15em;
+        }
+
+        /* FADE IN */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.7s forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .voice-card:nth-child(1) { animation: fadeUp 0.6s 0.1s forwards; opacity: 0; }
+        .voice-card:nth-child(2) { animation: fadeUp 0.6s 0.2s forwards; opacity: 0; }
+        .voice-card:nth-child(3) { animation: fadeUp 0.6s 0.3s forwards; opacity: 0; }
+        .voice-card:nth-child(4) { animation: fadeUp 0.6s 0.4s forwards; opacity: 0; }
+        .voice-card:nth-child(5) { animation: fadeUp 0.6s 0.5s forwards; opacity: 0; }
+        .voice-card:nth-child(6) { animation: fadeUp 0.6s 0.6s forwards; opacity: 0; }
+
+        @media (max-width: 768px) {
+            nav { padding: 16px 24px; }
+            nav a { display: none; }
+            .voice-grid { grid-template-columns: 1fr; padding: 0 20px 60px; }
+            .hero { padding: 60px 24px 40px; }
+            .signal-divider { padding: 0 20px; }
+            .bottom-note { padding: 0 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Midnight Signal</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/pages/art.html">Art</a>
+            <a href="/pages/services.html">Services</a>
+            <a href="/pages/products.html">Products</a>
+            <a href="/pages/creed.html">Creed</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="transmission-tag">TRANSMISSION — VOICE ROSTER</div>
+        <h1>Choose Your <span>Signal.</span></h1>
+        <p>Six voices. Three pairs. Each one hand-selected for hi-fidelity AI narration that keeps audiences locked in.</p>
+        <p class="paintbrush-note">// You bring the script. I apply the voice. That's the deal.</p>
+    </section>
+
+    <div class="signal-divider">
+        <span>— AUDITION THE CAST —</span>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item"><span class="legend-dot f"></span> Female</div>
+        <div class="legend-item"><span class="legend-dot m"></span> Male</div>
+    </div>
+
+    <div class="voice-grid">
+
+        <!-- SAMARA X -->
+        <div class="voice-card female" data-audio="Option_A_-_1__Samara_X_-_Smooth_Classy_Female_.mp3">
+            <span class="option-badge">OPTION A — 01</span>
+            <div class="voice-name"><span class="gender-dot"></span>Samara X</div>
+            <div class="voice-descriptor">Smooth · Classy · Female</div>
+            <div class="player-wrap">
+                <button class="play-btn" onclick="togglePlay(this)">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="white"><polygon points="3,1 13,7 3,13"/></svg>
+                </button>
+                <div class="progress-wrap">
+                    <div class="progress-bar-bg" onclick="seekAudio(this, event)">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                    <div class="time-display">0:00 / 0:00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LUCAN ROOK -->
+        <div class="voice-card male" data-audio="Option_A_-_2__Lucan_Rook_Energetic_Male_.mp3">
+            <span class="option-badge">OPTION A — 02</span>
+            <div class="voice-name"><span class="gender-dot"></span>Lucan Rook</div>
+            <div class="voice-descriptor">Energetic · Bold · Male</div>
+            <div class="player-wrap">
+                <button class="play-btn" onclick="togglePlay(this)">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="white"><polygon points="3,1 13,7 3,13"/></svg>
+                </button>
+                <div class="progress-wrap">
+                    <div class="progress-bar-bg" onclick="seekAudio(this, event)">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                    <div class="time-display">0:00 / 0:00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ALLISON -->
+        <div class="voice-card female" data-audio="Option_B_-_1__Allison_-_Millenial_Female_.mp3">
+            <span class="option-badge">OPTION B — 01</span>
+            <div class="voice-name"><span class="gender-dot"></span>Allison</div>
+            <div class="voice-descriptor">Millennial · Relatable · Female</div>
+            <div class="player-wrap">
+                <button class="play-btn" onclick="togglePlay(this)">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="white"><polygon points="3,1 13,7 3,13"/></svg>
+                </button>
+                <div class="progress-wrap">
+                    <div class="progress-bar-bg" onclick="seekAudio(this, event)">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                    <div class="time-display">0:00 / 0:00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KNOX DEEP -->
+        <div class="voice-card male" data-audio="Option_B_-_2__Knox_Deep_-_Announcer_Trailer_Male_.mp3">
+            <span class="option-badge">OPTION B — 02</span>
+            <div class="voice-name"><span class="gender-dot"></span>Knox Deep</div>
+            <div class="voice-descriptor">Announcer · Trailer · Male</div>
+            <div class="player-wrap">
+                <button class="play-btn" onclick="togglePlay(this)">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="white"><polygon points="3,1 13,7 3,13"/></svg>
+                </button>
+                <div class="progress-wrap">
+                    <div class="progress-bar-bg" onclick="seekAudio(this, event)">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                    <div class="time-display">0:00 / 0:00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IVY -->
+        <div class="voice-card female" data-audio="Option_C_-_1__Ivy_-_Asian_Accent_English_.mp3">
+            <span class="option-badge">OPTION C — 01</span>
+            <div class="voice-name"><span class="gender-dot"></span>Ivy</div>
+            <div class="voice-descriptor">Asian Accent · Distinct · Female</div>
+            <div class="player-wrap">
+                <button class="play-btn" onclick="togglePlay(this)">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="white"><polygon points="3,1 13,7 3,13"/></svg>
+                </button>
+                <div class="progress-wrap">
+                    <div class="progress-bar-bg" onclick="seekAudio(this, event)">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                    <div class="time-display">0:00 / 0:00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MARCUS -->
+        <div class="voice-card male" data-audio="Option_C_-_2__Marcus_-_German_Accent_Male_.mp3">
+            <span class="option-badge">OPTION C — 02</span>
+            <div class="voice-name"><span class="gender-dot"></span>Marcus</div>
+            <div class="voice-descriptor">German Accent · Authoritative · Male</div>
+            <div class="player-wrap">
+                <button class="play-btn" onclick="togglePlay(this)">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="white"><polygon points="3,1 13,7 3,13"/></svg>
+                </button>
+                <div class="progress-wrap">
+                    <div class="progress-bar-bg" onclick="seekAudio(this, event)">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                    <div class="time-display">0:00 / 0:00</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM NOTE -->
+    <div class="bottom-note">
+        <div class="tag">// ALREADY HAVE A VOICE IN MIND?</div>
+        <p>If you have a preferred <strong>ElevenLabs voice</strong> or your own custom clone, send me the link when you place your order. I'll work with it. The roster above is your starting point — not your ceiling.</p>
+    </div>
+
+    <footer>
+        © Midnight Signal Studio — Transmission Active
+    </footer>
+
+    <script>
+        // Audio instances map
+        const audioMap = {};
+        let currentCard = null;
+
+        function getAudio(card) {
+            const src = card.dataset.audio;
+            if (!audioMap[src]) {
+                audioMap[src] = new Audio('assets/audio/' + src);
+                audioMap[src].addEventListener('timeupdate', () => updateProgress(card));
+                audioMap[src].addEventListener('loadedmetadata', () => updateProgress(card));
+                audioMap[src].addEventListener('ended', () => resetCard(card));
+            }
+            return audioMap[src];
+        }
+
+        function togglePlay(btn) {
+            const card = btn.closest('.voice-card');
+            const audio = getAudio(card);
+
+            // Pause any other playing audio
+            if (currentCard && currentCard !== card) {
+                const prevAudio = getAudio(currentCard);
+                prevAudio.pause();
+                resetPlayBtn(currentCard.querySelector('.play-btn'));
+            }
+
+            if (audio.paused) {
+                audio.play();
+                currentCard = card;
+                btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 12 12" fill="white"><rect x="1" y="1" width="4" height="10"/><rect x="7" y="1" width="4" height="10"/></svg>`;
+            } else {
+                audio.pause();
+                resetPlayBtn(btn);
+            }
+        }
+
+        function resetPlayBtn(btn) {
+            btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="white"><polygon points="3,1 13,7 3,13"/></svg>`;
+        }
+
+        function resetCard(card) {
+            const audio = getAudio(card);
+            audio.currentTime = 0;
+            resetPlayBtn(card.querySelector('.play-btn'));
+            updateProgress(card);
+        }
+
+        function updateProgress(card) {
+            const audio = getAudio(card);
+            const fill = card.querySelector('.progress-bar-fill');
+            const time = card.querySelector('.time-display');
+            const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+            fill.style.width = pct + '%';
+            time.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration || 0);
+        }
+
+        function seekAudio(bar, e) {
+            const card = bar.closest('.voice-card');
+            const audio = getAudio(card);
+            if (!audio.duration) return;
+            const rect = bar.getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pct * audio.duration;
+        }
+
+        function formatTime(s) {
+            if (isNaN(s)) return '0:00';
+            const m = Math.floor(s / 60);
+            const sec = Math.floor(s % 60);
+            return m + ':' + String(sec).padStart(2, '0');
+        }
+    </script>
+
+</body>
+</html>
