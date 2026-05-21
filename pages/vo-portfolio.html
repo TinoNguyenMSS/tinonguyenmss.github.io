@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Work — Midnight Signal Studio</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <style>
+        .vo-hero {
+            padding: 100px 80px 60px;
+            text-align: center;
+        }
+
+        .vo-hero p {
+            font-size: 1.2rem;
+            max-width: 720px;
+            margin: 1.2rem auto 0;
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        .vo-grid {
+            padding: 40px 80px 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+            gap: 60px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .vo-card {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .vo-embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            background: #0a0a0a;
+            border: 1px solid rgba(255,255,255,0.08);
+            overflow: hidden;
+        }
+
+        .vo-embed iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        .vo-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .vo-copy h3 {
+            font-size: 1.15rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            /* PLACEHOLDER: Replace with the title of this piece */
+            color: inherit;
+        }
+
+        .vo-copy .vo-tag {
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            opacity: 0.5;
+            /* PLACEHOLDER: Replace with the genre/style tag e.g. "Dark Noir · Commercial" */
+        }
+
+        .vo-copy p {
+            font-size: 0.97rem;
+            line-height: 1.75;
+            opacity: 0.75;
+            max-width: 600px;
+            /* PLACEHOLDER: Replace with a short description of this piece — tone, use case, what makes it distinct */
+        }
+
+        .vo-divider {
+            text-align: center;
+            padding: 20px 80px 40px;
+            opacity: 0.3;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .vo-cta {
+            text-align: center;
+            padding: 60px 80px 100px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .vo-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .vo-cta p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.75;
+            line-height: 1.7;
+            /* PLACEHOLDER: Replace with your booking/contact pitch copy */
+        }
+
+        .vo-cta a.btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border: 1px solid rgba(255,255,255,0.5);
+            text-decoration: none;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: background 0.25s, color 0.25s;
+            /* PLACEHOLDER: Update href to your Fiverr gig or contact page */
+        }
+
+        .vo-cta a.btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 700px) {
+            .vo-hero { padding: 70px 24px 40px; }
+            .vo-grid { padding: 24px 24px 60px; grid-template-columns: 1fr; }
+            .vo-cta { padding: 40px 24px 60px; }
+        }
+    </style>
+</head>
+<body class="scanline">
+    <nav>
+        <div class="logo calli">Midnight Signal</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/pages/art.html">Art</a>
+            <a href="/pages/services.html">Services</a>
+            <a href="/pages/products.html">Products</a>
+            <a href="/pages/creed.html">Creed</a>
+            <a href="/pages/shed-review.html">Ryans' Shed Plans - Review</a>
+            <a href="/pages/wellness.html">Neuro Serge - Review</a>
+            <a href="/pages/soulmate.html">Soulmate Reading - Review</a>
+            <a href="/pages/reject_the_rot.html">Reject The Rot - A Field Guide</a>
+            <a href="/pages/voices.html">The Cast — MSS Voice Roster</a>
+            <a href="/pages/freeresumepro_review.html">FreeResume Pro — Review</a>
+            <a href="/pages/teds-woodworking-review.html">Teds' Woodworking — Review</a>
+            <a href="/pages/geo.html">Ai Visibility Optimization</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="vo-hero">
+        <h1 class="section-title fade-in">Voice Work</h1>
+        <p class="fade-in">
+            <!-- PLACEHOLDER: Write your hero subheading here. Something like:
+                 "Dark. Raspy. Deliberate. A voice built for stories that live in the shadow between words."
+                 Keep it 2–3 lines. Make it feel like the broadcast is starting. -->
+            [Your hero description goes here — tone, range, what you bring to the booth.]
+        </p>
+    </section>
+
+    <div class="vo-divider">— sample reel —</div>
+
+    <!-- VIDEO GRID -->
+    <div class="vo-grid">
+
+        <!-- CARD 1 -->
+        <div class="vo-card">
+            <div class="vo-embed">
+                <iframe
+                    src="https://www.youtube.com/embed/Y-mEvNI4DSA"
+                    title="Voice Sample 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="vo-copy">
+                <span class="vo-tag">[Genre / Style Tag]</span>
+                <h3>[Title of This Piece]</h3>
+                <p>[Short description — what this piece demonstrates, the mood, the use case. 2–3 sentences max.]</p>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="vo-card">
+            <div class="vo-embed">
+                <iframe
+                    src="https://www.youtube.com/embed/Dk_qJeRq8Uk"
+                    title="Voice Sample 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="vo-copy">
+                <span class="vo-tag">[Genre / Style Tag]</span>
+                <h3>[Title of This Piece]</h3>
+                <p>[Short description — what this piece demonstrates, the mood, the use case. 2–3 sentences max.]</p>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="vo-card">
+            <div class="vo-embed">
+                <iframe
+                    src="https://www.youtube.com/embed/MKXnp1z6NJw"
+                    title="Voice Sample 3"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="vo-copy">
+                <span class="vo-tag">[Genre / Style Tag]</span>
+                <h3>[Title of This Piece]</h3>
+                <p>[Short description — what this piece demonstrates, the mood, the use case. 2–3 sentences max.]</p>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="vo-card">
+            <div class="vo-embed">
+                <iframe
+                    src="https://www.youtube.com/embed/swFaKHeYo2E"
+                    title="Voice Sample 4"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="vo-copy">
+                <span class="vo-tag">[Genre / Style Tag]</span>
+                <h3>[Title of This Piece]</h3>
+                <p>[Short description — what this piece demonstrates, the mood, the use case. 2–3 sentences max.]</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA -->
+    <section class="vo-cta">
+        <h2 class="calli">Hire the Signal.</h2>
+        <p>
+            <!-- PLACEHOLDER: Your booking pitch. Something like:
+                 "If your project needs a voice that cuts through the noise — dark, controlled, and deliberate —
+                 let's talk. Available for commercial, narration, game VO, and character work." -->
+            [Your CTA copy goes here — what you offer, what kinds of projects you take, how to reach you.]
+        </p>
+        <a class="btn" href="#"><!-- PLACEHOLDER: Update href to Fiverr gig or contact page -->Book a Session</a>
+    </section>
+
+    <footer>
+        © Midnight Signal Studio — Transmission Active
+    </footer>
+</body>
+</html>
