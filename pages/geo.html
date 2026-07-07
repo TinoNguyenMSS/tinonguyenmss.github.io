@@ -7,13 +7,11 @@
 <meta name="description" content="Find out if your business shows up when customers ask ChatGPT, Perplexity, or Google AI for recommendations. Free AI Visibility Audit for Concord, Walnut Creek, and Contra Costa County businesses — from Midnight Signal Studio, founded by Tino Nguyen.">
 <link rel="canonical" href="https://www.midnightsignalstudio.com/pages/geo.html">
 
-<!-- Open Graph -->
 <meta property="og:title" content="AI Visibility (GEO) for Local Businesses | Midnight Signal Studio">
 <meta property="og:description" content="A growing number of customers ask AI for local recommendations. Get your free AI Visibility Audit and find out where you stand.">
 <meta property="og:url" content="https://www.midnightsignalstudio.com/pages/geo.html">
 <meta property="og:type" content="website">
 
-<!-- ============ STRUCTURED DATA ============ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,6 +21,9 @@
   "alternateName": "MSS",
   "description": "AI visibility and Generative Engine Optimization (GEO) consultancy helping local businesses get recommended by ChatGPT, Perplexity, Google AI Overviews, Gemini, and Claude.",
   "url": "https://www.midnightsignalstudio.com/pages/geo.html",
+  "telephone": "+1-925-276-0127",
+  "priceRange": "$150-$900",
+  "image": "https://www.midnightsignalstudio.com/assets/img/mss-logo.png",
   "founder": {
     "@type": "Person",
     "@id": "https://www.midnightsignalstudio.com/#tino",
@@ -73,7 +74,7 @@
       "name": "How is AI visibility different from SEO?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SEO helps you rank in a list of search results the customer still has to sift through. AI visibility determines whether you are named at all when an AI engine answers a question directly. The signals overlap — reviews, citations, structured data, consistent business information — but AI engines weight entity clarity, source authority, and factual consistency far more heavily than keywords."
+        "text": "SEO helps you rank in a list of results the customer still has to sift through. AI visibility determines whether you are named at all when an AI engine answers a question directly. The signals overlap — reviews, citations, structured data, consistent business information — but AI engines weight entity clarity, source authority, and factual consistency far more heavily than keywords."
       }
     },
     {
@@ -119,11 +120,8 @@
     --blue-glow: rgba(30,60,200,0.15);
     --purple-glow: rgba(100,30,180,0.1);
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--midnight);
     color: var(--white);
@@ -132,8 +130,6 @@
     overflow-x: hidden;
     line-height: 1.7;
   }
-
-  /* ===================== NOISE OVERLAY ===================== */
   body::before {
     content: "";
     position: fixed;
@@ -143,903 +139,139 @@
     z-index: 0;
     opacity: 0.6;
   }
-
-  /* ===================== NAVIGATION ===================== */
   nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    padding: 18px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(10,10,24,0.85);
-    backdrop-filter: blur(12px);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 48px; display: flex; align-items: center; justify-content: space-between;
+    background: rgba(10,10,24,0.85); backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(201,162,39,0.15);
   }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-  }
-
-  .nav-logo img {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .nav-logo-text {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 100;
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--white-dim);
-  }
-
-  .nav-cta {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 400;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-decoration: none;
-    border: 1px solid var(--gold-dim);
-    padding: 8px 20px;
-    transition: all 0.3s ease;
-  }
-
-  .nav-cta:hover {
-    background: var(--gold-dim);
-    border-color: var(--gold);
-  }
-
-  /* ===================== HERO ===================== */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 24px 80px;
-    overflow: hidden;
-  }
-
-  .hero-glow-1 {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 700px;
-    height: 400px;
-    background: radial-gradient(ellipse, var(--blue-glow) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-glow-2 {
-    position: absolute;
-    bottom: 0;
-    left: 30%;
-    width: 400px;
-    height: 300px;
-    background: radial-gradient(ellipse, var(--purple-glow) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 32px;
-    position: relative;
-    z-index: 2;
-    animation: pulse 4s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 30px rgba(30,60,200,0.3); }
-    50% { box-shadow: 0 0 60px rgba(30,60,200,0.5), 0 0 100px rgba(100,30,180,0.2); }
-  }
-
-  .hero-eyebrow {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 100;
-    font-size: 10px;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 2;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  .hero-headline {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 600;
-    font-size: clamp(36px, 6vw, 72px);
-    line-height: 1.1;
-    color: var(--white);
-    max-width: 820px;
-    margin: 0 auto 24px;
-    position: relative;
-    z-index: 2;
-    animation: fadeUp 0.8s 0.1s ease both;
-  }
-
-  .hero-headline em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
-  .hero-sub {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 15px;
-    letter-spacing: 1px;
-    color: var(--white-dim);
-    max-width: 560px;
-    margin: 0 auto 24px;
-    position: relative;
-    z-index: 2;
-    animation: fadeUp 0.8s 0.2s ease both;
-  }
-
-  .hero-locale {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(201,162,39,0.7);
-    margin: 0 auto 48px;
-    position: relative;
-    z-index: 2;
-    animation: fadeUp 0.8s 0.25s ease both;
-  }
-
-  .hero-cta-wrap {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 2;
-    animation: fadeUp 0.8s 0.3s ease both;
-  }
-
-  .btn-primary {
-    display: inline-block;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 400;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--midnight);
-    background: var(--gold);
-    padding: 16px 36px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border: none;
-    cursor: pointer;
-  }
-
-  .btn-primary::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .btn-primary:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(201,162,39,0.3);
-  }
-
-  .btn-secondary {
-    display: inline-block;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--white-dim);
-    border: 1px solid var(--white-muted);
-    padding: 16px 36px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--gold-dim);
-    color: var(--gold);
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .gold-rule {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 0 auto;
-  }
-
-  /* ===================== SECTIONS ===================== */
-  .section {
-    position: relative;
-    z-index: 1;
-    padding: 100px 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-eyebrow {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 100;
-    font-size: 10px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 600;
-    font-size: clamp(28px, 4vw, 48px);
-    text-align: center;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: var(--white);
-  }
-
-  .section-sub {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    color: var(--white-dim);
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 64px;
-    line-height: 1.8;
-  }
-
-  /* ===================== STAT CARDS ===================== */
-  .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2px;
-    margin-bottom: 80px;
-    border: 1px solid rgba(201,162,39,0.1);
-  }
-
-  .stat-card {
-    background: rgba(13,13,43,0.6);
-    padding: 40px 36px;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s ease;
-  }
-
-  .stat-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
-  }
-
-  .stat-card:hover {
-    background: rgba(20,20,60,0.8);
-  }
-
-  .stat-number {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 300;
-    font-size: 56px;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .stat-label {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--white-dim);
-    line-height: 1.6;
-  }
-
-  /* ===================== HOW IT WORKS ===================== */
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 40px;
-    margin-top: 64px;
-  }
-
-  .step {
-    position: relative;
-    padding: 36px;
-    border: 1px solid rgba(201,162,39,0.1);
-    background: rgba(13,13,43,0.4);
-    transition: border-color 0.3s ease;
-  }
-
-  .step:hover {
-    border-color: rgba(201,162,39,0.3);
-  }
-
-  .step-number {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 300;
-    font-size: 64px;
-    color: rgba(201,162,39,0.15);
-    line-height: 1;
-    margin-bottom: 16px;
-  }
-
-  .step-title {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 600;
-    font-size: 22px;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-
-  .step-body {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    color: var(--white-dim);
-    line-height: 1.8;
-  }
-
-  /* ===================== SCORE TIERS ===================== */
-  .tiers-wrap {
-    margin-top: 64px;
-    border: 1px solid rgba(201,162,39,0.15);
-    overflow: hidden;
-  }
-
-  .tier-row {
-    display: grid;
-    grid-template-columns: 120px 160px 1fr;
-    align-items: center;
-    padding: 20px 32px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    gap: 24px;
-    transition: background 0.2s ease;
-  }
-
-  .tier-row:last-child {
-    border-bottom: none;
-  }
-
-  .tier-row:hover {
-    background: rgba(201,162,39,0.04);
-  }
-
-  .tier-row.header {
-    background: rgba(10,10,40,0.9);
-    border-bottom: 1px solid rgba(201,162,39,0.2);
-  }
-
-  .tier-score {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 600;
-    font-size: 20px;
-    color: var(--gold);
-  }
-
-  .tier-row.header .tier-score {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 100;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--white-muted);
-  }
-
-  .tier-label {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 400;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--white);
-  }
-
-  .tier-row.header .tier-label {
-    font-weight: 100;
-    font-size: 10px;
-    color: var(--white-muted);
-  }
-
-  .tier-desc {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 13px;
-    letter-spacing: 0.3px;
-    color: var(--white-dim);
-    line-height: 1.6;
-  }
-
-  .tier-row.header .tier-desc {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--white-muted);
-  }
-
-  /* Tier color coding */
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+  .nav-logo-text { font-family: "Josefin Sans", sans-serif; font-weight: 100; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--white-dim); }
+  .nav-cta { font-family: "Josefin Sans", sans-serif; font-weight: 400; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid var(--gold-dim); padding: 8px 20px; transition: all 0.3s ease; }
+  .nav-cta:hover { background: var(--gold-dim); border-color: var(--gold); }
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; overflow: hidden; }
+  .hero-glow-1 { position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 700px; height: 400px; background: radial-gradient(ellipse, var(--blue-glow) 0%, transparent 70%); pointer-events: none; }
+  .hero-glow-2 { position: absolute; bottom: 0; left: 30%; width: 400px; height: 300px; background: radial-gradient(ellipse, var(--purple-glow) 0%, transparent 70%); pointer-events: none; }
+  .hero-logo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 32px; position: relative; z-index: 2; animation: pulse 4s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 30px rgba(30,60,200,0.3); } 50% { box-shadow: 0 0 60px rgba(30,60,200,0.5), 0 0 100px rgba(100,30,180,0.2); } }
+  .hero-eyebrow { font-family: "Josefin Sans", sans-serif; font-weight: 100; font-size: 10px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; position: relative; z-index: 2; animation: fadeUp 0.8s ease both; }
+  .hero-headline { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: clamp(36px, 6vw, 72px); line-height: 1.1; color: var(--white); max-width: 820px; margin: 0 auto 24px; position: relative; z-index: 2; animation: fadeUp 0.8s 0.1s ease both; }
+  .hero-headline em { font-style: italic; color: var(--gold); }
+  .hero-sub { font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 15px; letter-spacing: 1px; color: var(--white-dim); max-width: 560px; margin: 0 auto 24px; position: relative; z-index: 2; animation: fadeUp 0.8s 0.2s ease both; }
+  .hero-locale { font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(201,162,39,0.7); margin: 0 auto 48px; position: relative; z-index: 2; animation: fadeUp 0.8s 0.25s ease both; }
+  .hero-cta-wrap { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2; animation: fadeUp 0.8s 0.3s ease both; }
+  .btn-primary { display: inline-block; font-family: "Josefin Sans", sans-serif; font-weight: 400; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--midnight); background: var(--gold); padding: 16px 36px; text-decoration: none; transition: all 0.3s ease; position: relative; overflow: hidden; border: none; cursor: pointer; }
+  .btn-primary::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%); pointer-events: none; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,162,39,0.3); }
+  .btn-secondary { display: inline-block; font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--white-dim); border: 1px solid var(--white-muted); padding: 16px 36px; text-decoration: none; transition: all 0.3s ease; }
+  .btn-secondary:hover { border-color: var(--gold-dim); color: var(--gold); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .gold-rule { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto; }
+  .section { position: relative; z-index: 1; padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
+  .section-eyebrow { font-family: "Josefin Sans", sans-serif; font-weight: 100; font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 16px; }
+  .section-title { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: clamp(28px, 4vw, 48px); text-align: center; line-height: 1.2; margin-bottom: 20px; color: var(--white); }
+  .section-sub { font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 14px; letter-spacing: 0.5px; color: var(--white-dim); text-align: center; max-width: 600px; margin: 0 auto 64px; line-height: 1.8; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; margin-bottom: 80px; border: 1px solid rgba(201,162,39,0.1); }
+  .stat-card { background: rgba(13,13,43,0.6); padding: 40px 36px; position: relative; overflow: hidden; transition: background 0.3s ease; }
+  .stat-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-dim), transparent); }
+  .stat-card:hover { background: rgba(20,20,60,0.8); }
+  .stat-number { font-family: "Cormorant Garamond", serif; font-weight: 300; font-size: 56px; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--white-dim); line-height: 1.6; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; margin-top: 64px; }
+  .step { position: relative; padding: 36px; border: 1px solid rgba(201,162,39,0.1); background: rgba(13,13,43,0.4); transition: border-color 0.3s ease; }
+  .step:hover { border-color: rgba(201,162,39,0.3); }
+  .step-number { font-family: "Cormorant Garamond", serif; font-weight: 300; font-size: 64px; color: rgba(201,162,39,0.15); line-height: 1; margin-bottom: 16px; }
+  .step-title { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 22px; color: var(--white); margin-bottom: 12px; }
+  .step-body { font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.5px; color: var(--white-dim); line-height: 1.8; }
+  .tiers-wrap { margin-top: 64px; border: 1px solid rgba(201,162,39,0.15); overflow: hidden; }
+  .tier-row { display: grid; grid-template-columns: 120px 160px 1fr; align-items: center; padding: 20px 32px; border-bottom: 1px solid rgba(255,255,255,0.05); gap: 24px; transition: background 0.2s ease; }
+  .tier-row:last-child { border-bottom: none; }
+  .tier-row:hover { background: rgba(201,162,39,0.04); }
+  .tier-row.header { background: rgba(10,10,40,0.9); border-bottom: 1px solid rgba(201,162,39,0.2); }
+  .tier-score { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 20px; color: var(--gold); }
+  .tier-row.header .tier-score { font-family: "Josefin Sans", sans-serif; font-weight: 100; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--white-muted); }
+  .tier-label { font-family: "Josefin Sans", sans-serif; font-weight: 400; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--white); }
+  .tier-row.header .tier-label { font-weight: 100; font-size: 10px; color: var(--white-muted); }
+  .tier-desc { font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.3px; color: var(--white-dim); line-height: 1.6; }
+  .tier-row.header .tier-desc { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--white-muted); }
   .tier-row:nth-child(2) .tier-score { color: #666; }
   .tier-row:nth-child(3) .tier-score { color: #888; }
   .tier-row:nth-child(4) .tier-score { color: #aaa; }
   .tier-row:nth-child(5) .tier-score { color: var(--gold); }
   .tier-row:nth-child(6) .tier-score { color: #7fffb0; }
-
-  /* ===================== FOUNDER ===================== */
-  .founder-wrap {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 40px;
-    align-items: center;
-    max-width: 760px;
-    margin: 48px auto 0;
-    padding: 44px 48px;
-    border: 1px solid rgba(201,162,39,0.15);
-    background: rgba(13,13,43,0.5);
-  }
-
-  .founder-photo {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid var(--gold-dim);
-  }
-
-  .founder-name {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 600;
-    font-size: 26px;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-
-  .founder-role {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 14px;
-  }
-
-  .founder-bio {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 13px;
-    letter-spacing: 0.4px;
-    color: var(--white-dim);
-    line-height: 1.8;
-  }
-
-  /* ===================== TESTIMONIAL ===================== */
-  .testimonial {
-    max-width: 680px;
-    margin: 48px auto 0;
-    padding: 44px 48px;
-    border-left: 2px solid var(--gold);
-    background: rgba(13,13,43,0.5);
-  }
-
-  .testimonial-quote {
-    font-family: "Cormorant Garamond", serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 1.5;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 20px;
-  }
-
-  .testimonial-attrib {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 11px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  /* ===================== FAQ ===================== */
-  .faq-list {
-    max-width: 760px;
-    margin: 48px auto 0;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid rgba(201,162,39,0.12);
-    padding: 32px 8px;
-  }
-
-  .faq-item:first-child {
-    border-top: 1px solid rgba(201,162,39,0.12);
-  }
-
-  .faq-q {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 600;
-    font-size: 22px;
-    color: var(--gold-light);
-    margin-bottom: 12px;
-  }
-
-  .faq-a {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 13.5px;
-    letter-spacing: 0.4px;
-    color: var(--white-dim);
-    line-height: 1.85;
-  }
-
-  /* ===================== DIVIDER ===================== */
-  .section-divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(201,162,39,0.2), transparent);
-    margin: 0;
-  }
-
-  /* ===================== CTA SECTION ===================== */
-  .cta-section {
-    position: relative;
-    padding: 120px 24px;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  .cta-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 400px;
-    background: radial-gradient(ellipse, rgba(201,162,39,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .cta-section .section-title {
-    position: relative;
-    z-index: 2;
-    margin-bottom: 16px;
-  }
-
-  .cta-section .section-sub {
-    position: relative;
-    z-index: 2;
-    margin-bottom: 48px;
-  }
-
-  .direct-line {
-    position: relative;
-    z-index: 2;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    color: rgba(255,255,255,0.35);
-    margin: 32px auto 48px;
-  }
-
-  .direct-line a {
-    color: var(--gold);
-    text-decoration: none;
-    letter-spacing: 1px;
-  }
-
-  .direct-line a:hover {
-    color: var(--gold-light);
-  }
-
-  /* ===================== FOOTER ===================== */
-  footer {
-    position: relative;
-    z-index: 1;
-    padding: 40px 48px;
-    border-top: 1px solid rgba(201,162,39,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .footer-left {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 100;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--white-muted);
-  }
-
-  .footer-tagline {
-    font-family: "Cormorant Garamond", serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 14px;
-    color: rgba(201,162,39,0.6);
-    letter-spacing: 1px;
-  }
-
-  /* ===================== FORM ===================== */
-  .contact-form{
-    width:100%;
-    max-width:640px;
-    margin:40px auto 0;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-    position: relative;
-    z-index: 2;
-    transition: opacity 0.4s ease;
-  }
-
-  .form-row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-  }
-
-  .form-group{
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-  }
-
+  .founder-wrap { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; max-width: 760px; margin: 48px auto 0; padding: 44px 48px; border: 1px solid rgba(201,162,39,0.15); background: rgba(13,13,43,0.5); }
+  .founder-photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 1px solid var(--gold-dim); }
+  .founder-name { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 26px; color: var(--white); margin-bottom: 4px; }
+  .founder-role { font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .founder-bio { font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.4px; color: var(--white-dim); line-height: 1.8; }
+  .testimonial { max-width: 680px; margin: 48px auto 0; padding: 44px 48px; border-left: 2px solid var(--gold); background: rgba(13,13,43,0.5); }
+  .testimonial-quote { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 400; font-size: 22px; line-height: 1.5; color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+  .testimonial-attrib { font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
+  .faq-list { max-width: 760px; margin: 48px auto 0; }
+  .faq-item { border-bottom: 1px solid rgba(201,162,39,0.12); padding: 32px 8px; }
+  .faq-item:first-child { border-top: 1px solid rgba(201,162,39,0.12); }
+  .faq-q { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 22px; color: var(--gold-light); margin-bottom: 12px; }
+  .faq-a { font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 13.5px; letter-spacing: 0.4px; color: var(--white-dim); line-height: 1.85; }
+  .section-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,162,39,0.2), transparent); margin: 0; }
+  .cta-section { position: relative; padding: 120px 24px; text-align: center; overflow: hidden; }
+  .cta-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(201,162,39,0.06) 0%, transparent 70%); pointer-events: none; }
+  .cta-section .section-title { position: relative; z-index: 2; margin-bottom: 16px; }
+  .cta-section .section-sub { position: relative; z-index: 2; margin-bottom: 48px; }
+  .direct-line { position: relative; z-index: 2; font-family: "Josefin Sans", sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 1.5px; color: rgba(255,255,255,0.35); margin: 32px auto 48px; }
+  .direct-line a { color: var(--gold); text-decoration: none; letter-spacing: 1px; }
+  .direct-line a:hover { color: var(--gold-light); }
+  footer { position: relative; z-index: 1; padding: 40px 48px; border-top: 1px solid rgba(201,162,39,0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer-left { font-family: "Josefin Sans", sans-serif; font-weight: 100; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--white-muted); }
+  .footer-tagline { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 300; font-size: 14px; color: rgba(201,162,39,0.6); letter-spacing: 1px; }
+  .contact-form{ width:100%; max-width:640px; margin:40px auto 0; display:flex; flex-direction:column; gap:18px; position: relative; z-index: 2; transition: opacity 0.4s ease; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .form-group{ display:flex; flex-direction:column; gap:6px; }
   .form-full{grid-column:1/-1;}
-
-  .form-label{
-    font-family:"Josefin Sans",sans-serif;
-    font-size:9px;
-    font-weight:400;
-    letter-spacing:0.25em;
-    text-transform:uppercase;
-    color:rgba(201,162,39,0.7);
-    text-align:left;
-  }
-
-  .form-input{
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(201,162,39,0.2);
-    border-radius:0;
-    padding:12px 16px;
-    color:#fff;
-    font-family:"Josefin Sans",sans-serif;
-    font-size:13px;
-    font-weight:300;
-    letter-spacing:0.05em;
-    outline:none;
-    transition:border-color 0.3s,background 0.3s;
-    width:100%;
-    -webkit-appearance:none;
-  }
-
-  .form-input:focus{
-    border-color:var(--gold);
-    background:rgba(201,162,39,0.06);
-  }
-
-  .form-input::placeholder{
-    color:rgba(255,255,255,0.2);
-  }
-
-  .form-select{
-    cursor:pointer;
-    color:rgba(255,255,255,0.7);
-  }
-
-  .form-select option{
-    background:#0a0a18;
-    color:#fff;
-  }
-
-  .form-textarea{
-    resize:vertical;
-    min-height:100px;
-    line-height:1.6;
-  }
-
-  .radio-row{
-    display:flex;
-    gap:24px;
-    flex-wrap:wrap;
-  }
-
-  .radio-opt{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    cursor:pointer;
-    font-family:"Josefin Sans",sans-serif;
-    font-size:12px;
-    font-weight:300;
-    letter-spacing:0.1em;
-    color:rgba(255,255,255,0.6);
-    transition:color 0.2s;
-  }
-
+  .form-label{ font-family:"Josefin Sans",sans-serif; font-size:9px; font-weight:400; letter-spacing:0.25em; text-transform:uppercase; color:rgba(201,162,39,0.7); text-align:left; }
+  .form-input{ background:rgba(255,255,255,0.04); border:1px solid rgba(201,162,39,0.2); border-radius:0; padding:12px 16px; color:#fff; font-family:"Josefin Sans",sans-serif; font-size:13px; font-weight:300; letter-spacing:0.05em; outline:none; transition:border-color 0.3s,background 0.3s; width:100%; -webkit-appearance:none; }
+  .form-input:focus{ border-color:var(--gold); background:rgba(201,162,39,0.06); }
+  .form-input::placeholder{ color:rgba(255,255,255,0.2); }
+  .form-select{ cursor:pointer; color:rgba(255,255,255,0.7); }
+  .form-select option{ background:#0a0a18; color:#fff; }
+  .form-textarea{ resize:vertical; min-height:100px; line-height:1.6; }
+  .radio-row{ display:flex; gap:24px; flex-wrap:wrap; }
+  .radio-opt{ display:flex; align-items:center; gap:8px; cursor:pointer; font-family:"Josefin Sans",sans-serif; font-size:12px; font-weight:300; letter-spacing:0.1em; color:rgba(255,255,255,0.6); transition:color 0.2s; }
   .radio-opt:hover{color:#fff;}
-
-  .radio-opt input[type="radio"]{
-    appearance:none;
-    width:14px;height:14px;
-    border:1px solid rgba(201,162,39,0.4);
-    border-radius:50%;
-    position:relative;
-    cursor:pointer;
-    transition:border-color 0.2s;
-    flex-shrink:0;
-  }
-
-  .radio-opt input[type="radio"]:checked{
-    border-color:var(--gold);
-    background:radial-gradient(circle,var(--gold) 40%,transparent 41%);
-  }
-
-  .form-submit-wrap{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
-    margin-top:8px;
-  }
-
-  .form-note{
-    font-family:"Josefin Sans",sans-serif;
-    font-size:10px;
-    font-weight:300;
-    letter-spacing:0.15em;
-    color:rgba(255,255,255,0.25);
-    text-align:center;
-  }
-
-  .form-error{
-    display:none;
-    font-family:"Josefin Sans",sans-serif;
-    font-size:11px;
-    letter-spacing:0.1em;
-    color:#e08b8b;
-    text-align:center;
-  }
-
-  .form-success{
-    display:none;
-    text-align:center;
-    padding:40px 20px;
-    position: relative;
-    z-index: 2;
-    animation:fadeUp 0.5s ease forwards;
-  }
-
-  .success-icon{
-    font-size:36px;
-    color:var(--gold);
-    margin-bottom:16px;
-    animation:spinOnce 0.6s ease forwards;
-  }
-
-  @keyframes spinOnce{
-    from{transform:rotate(-90deg);opacity:0}
-    to{transform:rotate(0deg);opacity:1}
-  }
-
-  .success-title{
-    font-family:"Cormorant Garamond",serif;
-    font-size:28px;
-    font-weight:300;
-    color:var(--gold-light);
-    margin-bottom:10px;
-    letter-spacing:0.05em;
-  }
-
-  .success-body{
-    font-size:13px;
-    font-weight:300;
-    letter-spacing:0.08em;
-    color:rgba(255,255,255,0.5);
-    line-height:1.7;
-    max-width:420px;
-    margin:0 auto;
-  }
-
-  /* Honeypot — hidden from humans, visible to bots */
-  .hp-field {
-    position: absolute;
-    left: -9999px;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-  }
-
-  /* ===================== RESPONSIVE ===================== */
-  @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
-    .tier-row { grid-template-columns: 80px 1fr; gap: 12px; padding: 16px 20px; }
-    .tier-desc { display: none; }
-    .founder-wrap { grid-template-columns: 1fr; text-align: center; padding: 36px 28px; }
-    .founder-photo { margin: 0 auto; }
-    footer { flex-direction: column; text-align: center; }
-  }
-
-  @media(max-width:600px){
-    .form-row{grid-template-columns:1fr;}
-    .radio-row{gap:16px;}
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation: none !important; transition: none !important; }
-    html { scroll-behavior: auto; }
-  }
+  .radio-opt input[type="radio"]{ appearance:none; width:14px;height:14px; border:1px solid rgba(201,162,39,0.4); border-radius:50%; position:relative; cursor:pointer; transition:border-color 0.2s; flex-shrink:0; }
+  .radio-opt input[type="radio"]:checked{ border-color:var(--gold); background:radial-gradient(circle,var(--gold) 40%,transparent 41%); }
+  .form-submit-wrap{ display:flex; flex-direction:column; align-items:center; gap:12px; margin-top:8px; }
+  .form-note{ font-family:"Josefin Sans",sans-serif; font-size:10px; font-weight:300; letter-spacing:0.15em; color:rgba(255,255,255,0.25); text-align:center; }
+  .form-error{ display:none; font-family:"Josefin Sans",sans-serif; font-size:11px; letter-spacing:0.1em; color:#e08b8b; text-align:center; }
+  .form-success{ display:none; text-align:center; padding:40px 20px; position: relative; z-index: 2; animation:fadeUp 0.5s ease forwards; }
+  .success-icon{ font-size:36px; color:var(--gold); margin-bottom:16px; animation:spinOnce 0.6s ease forwards; }
+  @keyframes spinOnce{ from{transform:rotate(-90deg);opacity:0} to{transform:rotate(0deg);opacity:1} }
+  .success-title{ font-family:"Cormorant Garamond",serif; font-size:28px; font-weight:300; color:var(--gold-light); margin-bottom:10px; letter-spacing:0.05em; }
+  .success-body{ font-size:13px; font-weight:300; letter-spacing:0.08em; color:rgba(255,255,255,0.5); line-height:1.7; max-width:420px; margin:0 auto; }
+  .hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+  @media (max-width: 768px) { nav { padding: 16px 24px; } .tier-row { grid-template-columns: 80px 1fr; gap: 12px; padding: 16px 20px; } .tier-desc { display: none; } .founder-wrap { grid-template-columns: 1fr; text-align: center; padding: 36px 28px; } .founder-photo { margin: 0 auto; } footer { flex-direction: column; text-align: center; } }
+  @media(max-width:600px){ .form-row{grid-template-columns:1fr;} .radio-row{gap:16px;} }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="https://www.midnightsignalstudio.com" class="nav-logo">
-    <!-- KEEP YOUR EXISTING LOGO: paste your original base64 string into src below,
-         or (better) save the logo once as a real file at /assets/img/mss-logo.jpg
-         and use src="../assets/img/mss-logo.jpg" — smaller page, faster load. -->
     <img src="../assets/img/mss-logo.png" alt="Midnight Signal Studio logo">
     <span class="nav-logo-text">Midnight Signal Studio</span>
   </a>
   <a href="#contact" class="nav-cta">Get Your Free Audit</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-glow-1"></div>
   <div class="hero-glow-2"></div>
   <div style="position:relative;z-index:2;max-width:900px;">
-    <!-- KEEP YOUR EXISTING LOGO: same note as above. -->
     <img class="hero-logo" src="../assets/img/mss-logo.png" alt="Midnight Signal Studio">
     <div class="hero-eyebrow">AI Visibility for Local Business</div>
-    <h1 class="hero-headline">
-      Is your business <em>invisible</em> to AI search?
-    </h1>
-    <p class="hero-sub">
-      A growing number of customers now ask ChatGPT, Google AI, and Perplexity for local business recommendations before they ever open a map. The businesses that show up win the visit. The ones that don't, don't.
-    </p>
+    <h1 class="hero-headline">Is your business <em>invisible</em> to AI search?</h1>
+    <p class="hero-sub">A growing number of customers now ask ChatGPT, Google AI, and Perplexity for local business recommendations before they ever open a map. The businesses that show up win the visit. The ones that don't, don't.</p>
     <p class="hero-locale">Serving Concord &middot; Walnut Creek &middot; Contra Costa County &middot; East Bay</p>
     <div class="hero-cta-wrap">
       <a href="#contact" class="btn-primary">Get Your Free Audit</a>
@@ -1050,198 +282,97 @@
 
 <div class="section-divider"></div>
 
-<!-- PROBLEM / STATS -->
 <div class="section">
   <div class="section-eyebrow">The Landscape Has Changed</div>
   <h2 class="section-title">Your reviews are strong.<br>Your AI visibility may not be.</h2>
-  <p class="section-sub">
-    High Yelp ratings and loyal regulars don't automatically translate to AI recommendations. AI engines pull from different signals — and most local businesses haven't optimized for any of them. This practice is called <strong style="color:var(--gold-light);font-weight:400;">Generative Engine Optimization (GEO)</strong>: making your business visible and accurately represented inside AI-generated answers, the way SEO once made you visible in search results.
-  </p>
-
+  <p class="section-sub">High Yelp ratings and loyal regulars don't automatically translate to AI recommendations. AI engines pull from different signals — and most local businesses haven't optimized for any of them. This practice is called <strong style="color:var(--gold-light);font-weight:400;">Generative Engine Optimization (GEO)</strong>: making your business visible and accurately represented inside AI-generated answers, the way SEO once made you visible in search results.</p>
   <div class="stat-grid">
-    <div class="stat-card">
-      <div class="stat-number">5</div>
-      <div class="stat-label">Major AI platforms now<br>recommend local businesses<br>by name</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">25</div>
-      <div class="stat-label">Customer-style queries we<br>run across every platform<br>in a full audit</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">60&ndash;90</div>
-      <div class="stat-label">Days for meaningful score<br>improvement after targeted<br>visibility work begins</div>
-    </div>
+    <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Major AI platforms now<br>recommend local businesses<br>by name</div></div>
+    <div class="stat-card"><div class="stat-number">25</div><div class="stat-label">Customer-style queries we<br>run across every platform<br>in a full audit</div></div>
+    <div class="stat-card"><div class="stat-number">60&ndash;90</div><div class="stat-label">Days for meaningful score<br>improvement after targeted<br>visibility work begins</div></div>
   </div>
 </div>
 
 <div class="section-divider"></div>
 
-<!-- HOW IT WORKS -->
 <div class="section" id="how-it-works">
   <div class="section-eyebrow">The Process</div>
   <h2 class="section-title">What an AI Visibility Audit actually is</h2>
-  <p class="section-sub">
-    No guesswork. No vanity metrics. A fixed methodology that produces a defensible score you can track over time.
-  </p>
-
+  <p class="section-sub">No guesswork. No vanity metrics. A fixed methodology that produces a defensible score you can track over time.</p>
   <div class="steps">
-    <div class="step">
-      <div class="step-number">01</div>
-      <div class="step-title">Query Battery</div>
-      <div class="step-body">We run 25 standardized customer-style queries across five AI platforms — ChatGPT, Perplexity, Google AI Overviews, Gemini, and Claude — within a 24-hour window to control for variability.</div>
-    </div>
-    <div class="step">
-      <div class="step-number">02</div>
-      <div class="step-title">Score Calculation</div>
-      <div class="step-body">We measure mention frequency, competitive share-of-voice against your top three local competitors, sentiment and factual accuracy, and citation source quality. Total: 0–100.</div>
-    </div>
-    <div class="step">
-      <div class="step-number">03</div>
-      <div class="step-title">Findings Report</div>
-      <div class="step-body">You receive a written audit with your exact score, a competitor landscape breakdown, any factual errors AI engines are spreading about your business, and a prioritized fix list ordered by impact.</div>
-    </div>
-    <div class="step">
-      <div class="step-number">04</div>
-      <div class="step-title">Optional Retainer</div>
-      <div class="step-body">If you want ongoing help implementing the fixes and tracking score movement month over month, we offer two retainer tiers. No obligation — the audit report is yours regardless.</div>
-    </div>
+    <div class="step"><div class="step-number">01</div><div class="step-title">Query Battery</div><div class="step-body">We run 25 standardized customer-style queries across five AI platforms — ChatGPT, Perplexity, Google AI Overviews, Gemini, and Claude — within a 24-hour window to control for variability.</div></div>
+    <div class="step"><div class="step-number">02</div><div class="step-title">Score Calculation</div><div class="step-body">We measure mention frequency, competitive share-of-voice against your top three local competitors, sentiment and factual accuracy, and citation source quality. Total: 0–100.</div></div>
+    <div class="step"><div class="step-number">03</div><div class="step-title">Findings Report</div><div class="step-body">You receive a written audit with your exact score, a competitor landscape breakdown, any factual errors AI engines are spreading about your business, and a prioritized fix list ordered by impact.</div></div>
+    <div class="step"><div class="step-number">04</div><div class="step-title">Optional Retainer</div><div class="step-body">If you want ongoing help implementing the fixes and tracking score movement month over month, we offer two retainer tiers. No obligation — the audit report is yours regardless.</div></div>
   </div>
 </div>
 
 <div class="section-divider"></div>
 
-<!-- SCORE TIERS -->
 <div class="section">
   <div class="section-eyebrow">The Scoring System</div>
   <h2 class="section-title">Your AI Visibility Score</h2>
-  <p class="section-sub">
-    A single number from 0 to 100. Not a Google ranking. Not a review score. A measurement of how AI engines currently treat your business as a recommendable option in your category.
-  </p>
-
+  <p class="section-sub">A single number from 0 to 100. Not a Google ranking. Not a review score. A measurement of how AI engines currently treat your business as a recommendable option in your category.</p>
   <div class="tiers-wrap">
-    <div class="tier-row header">
-      <div class="tier-score">Score</div>
-      <div class="tier-label">Tier</div>
-      <div class="tier-desc">What It Means</div>
-    </div>
-    <div class="tier-row">
-      <div class="tier-score">0–20</div>
-      <div class="tier-label">Invisible</div>
-      <div class="tier-desc">AI engines do not know you exist as a recommendable option. Customers asking for businesses like yours are being sent to competitors entirely.</div>
-    </div>
-    <div class="tier-row">
-      <div class="tier-score">21–40</div>
-      <div class="tier-label">Faint Signal</div>
-      <div class="tier-desc">You appear occasionally, often with inaccurate details. Most recommendation moments still go to competitors.</div>
-    </div>
-    <div class="tier-row">
-      <div class="tier-score">41–60</div>
-      <div class="tier-label">Detectable</div>
-      <div class="tier-desc">AI engines recognize you and recommend you for a fraction of relevant queries — but inconsistently and rarely in first position.</div>
-    </div>
-    <div class="tier-row">
-      <div class="tier-score">61–80</div>
-      <div class="tier-label">Established</div>
-      <div class="tier-desc">You're a regular presence in AI recommendations, often in top-three positions. Real, measurable visibility that drives foot traffic.</div>
-    </div>
-    <div class="tier-row">
-      <div class="tier-score">81–100</div>
-      <div class="tier-label">Category Leader</div>
-      <div class="tier-desc">You're the default recommendation in your category and area. Hard to dislodge once earned — and worth protecting.</div>
-    </div>
+    <div class="tier-row header"><div class="tier-score">Score</div><div class="tier-label">Tier</div><div class="tier-desc">What It Means</div></div>
+    <div class="tier-row"><div class="tier-score">0–20</div><div class="tier-label">Invisible</div><div class="tier-desc">AI engines do not know you exist as a recommendable option. Customers asking for businesses like yours are being sent to competitors entirely.</div></div>
+    <div class="tier-row"><div class="tier-score">21–40</div><div class="tier-label">Faint Signal</div><div class="tier-desc">You appear occasionally, often with inaccurate details. Most recommendation moments still go to competitors.</div></div>
+    <div class="tier-row"><div class="tier-score">41–60</div><div class="tier-label">Detectable</div><div class="tier-desc">AI engines recognize you and recommend you for a fraction of relevant queries — but inconsistently and rarely in first position.</div></div>
+    <div class="tier-row"><div class="tier-score">61–80</div><div class="tier-label">Established</div><div class="tier-desc">You're a regular presence in AI recommendations, often in top-three positions. Real, measurable visibility that drives foot traffic.</div></div>
+    <div class="tier-row"><div class="tier-score">81–100</div><div class="tier-label">Category Leader</div><div class="tier-desc">You're the default recommendation in your category and area. Hard to dislodge once earned — and worth protecting.</div></div>
   </div>
 
   <!-- ============ ANDERSON TESTIMONIAL — UNCOMMENT AFTER VERBAL OK ============
   <div class="testimonial">
-    <div class="testimonial-quote">
-      "PASTE DR. ANDERSON'S QUOTE HERE ONCE CONFIRMED."
-    </div>
+    <div class="testimonial-quote">"PASTE DR. ANDERSON'S QUOTE HERE ONCE CONFIRMED."</div>
     <div class="testimonial-attrib">Dr. Warren Anderson &middot; Anderson Chiropractic, Concord CA</div>
   </div>
   ============ END ANDERSON TESTIMONIAL ============ -->
-
 </div>
 
 <div class="section-divider"></div>
 
-<!-- FOUNDER -->
 <div class="section">
   <div class="section-eyebrow">Who's Behind This</div>
   <h2 class="section-title">A strategist, not an agency mill</h2>
-
   <div class="founder-wrap">
-    <!-- Add a photo of yourself at /assets/img/tino.jpg — a real face is a trust
-         multiplier for local prospects. Until then, you can reuse the MSS logo. -->
     <img class="founder-photo" src="../assets/img/tino.jpg" alt="Tino Nguyen, Founder of Midnight Signal Studio">
     <div>
       <div class="founder-name">Tino Nguyen</div>
       <div class="founder-role">Founder &amp; GEO Strategist &middot; Concord, CA</div>
-      <p class="founder-bio">
-        I'm a Concord native who watched AI answers quietly replace search results — and watched good local businesses disappear from the conversation without ever knowing it happened. Midnight Signal Studio exists to fix that. Every audit is run by me, personally, with a fixed methodology and a score you can hold me accountable to. No offshore teams, no dashboards nobody reads, no jargon. Just a clear picture of how the machines see your business, and a plan to make them say your name.
-      </p>
+      <p class="founder-bio">I'm a Concord native who watched AI answers quietly replace search results — and watched good local businesses disappear from the conversation without ever knowing it happened. Midnight Signal Studio exists to fix that. Every audit is run by me, personally, with a fixed methodology and a score you can hold me accountable to. No offshore teams, no dashboards nobody reads, no jargon. Just a clear picture of how the machines see your business, and a plan to make them say your name.</p>
     </div>
   </div>
 </div>
 
 <div class="section-divider"></div>
 
-<!-- FAQ -->
 <div class="section" id="faq">
   <div class="section-eyebrow">Straight Answers</div>
   <h2 class="section-title">Frequently asked questions</h2>
-
   <div class="faq-list">
-    <div class="faq-item">
-      <h3 class="faq-q">What is GEO (Generative Engine Optimization)?</h3>
-      <p class="faq-a">GEO is the practice of making a business visible — and accurately represented — inside AI-generated answers: the recommendations produced by ChatGPT, Perplexity, Google AI Overviews, Gemini, and Claude. Where traditional SEO targets a page of blue links, GEO targets the single answer an AI gives when a customer asks for a recommendation. We use "AI visibility" and "GEO" interchangeably.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">How is AI visibility different from SEO?</h3>
-      <p class="faq-a">SEO helps you rank in a list of results the customer still has to sift through. AI visibility determines whether you're named at all when an AI answers directly. The signals overlap — reviews, citations, structured data, consistent business information — but AI engines weight entity clarity, source authority, and factual consistency far more heavily than keywords. A business can rank well on Google and still be invisible to ChatGPT.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">How long until I see results?</h3>
-      <p class="faq-a">Meaningful score improvement typically takes 60–90 days after targeted work begins. AI engines refresh their understanding of local businesses more slowly than search indexes, so early fixes compound over the months that follow. That's also why the free audit matters: it establishes your baseline so progress is measurable, not vibes.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">What does the free audit include?</h3>
-      <p class="faq-a">Twenty-five standardized customer-style queries run across five AI platforms within a 24-hour window; your 0–100 AI Visibility Score; a competitor share-of-voice breakdown; any factual errors AI engines are spreading about your business; and a prioritized fix list ordered by impact. The report is yours with no obligation — implement it yourself or ask about a retainer.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">What areas do you serve?</h3>
-      <p class="faq-a">Midnight Signal Studio is based in Concord, California and works with local businesses throughout Contra Costa County and the East Bay — Walnut Creek, Pleasant Hill, Clayton, Martinez, and surrounding communities. Prefer to meet in person over coffee? That's the default around here. Remote engagements are available anywhere.</p>
-    </div>
+    <div class="faq-item"><h3 class="faq-q">What is GEO (Generative Engine Optimization)?</h3><p class="faq-a">GEO is the practice of making a business visible — and accurately represented — inside AI-generated answers: the recommendations produced by ChatGPT, Perplexity, Google AI Overviews, Gemini, and Claude. Where traditional SEO targets a page of blue links, GEO targets the single answer an AI gives when a customer asks for a recommendation. We use "AI visibility" and "GEO" interchangeably.</p></div>
+    <div class="faq-item"><h3 class="faq-q">How is AI visibility different from SEO?</h3><p class="faq-a">SEO helps you rank in a list of results the customer still has to sift through. AI visibility determines whether you're named at all when an AI answers directly. The signals overlap — reviews, citations, structured data, consistent business information — but AI engines weight entity clarity, source authority, and factual consistency far more heavily than keywords. A business can rank well on Google and still be invisible to ChatGPT.</p></div>
+    <div class="faq-item"><h3 class="faq-q">How long until I see results?</h3><p class="faq-a">Meaningful score improvement typically takes 60–90 days after targeted work begins. AI engines refresh their understanding of local businesses more slowly than search indexes, so early fixes compound over the months that follow. That's also why the free audit matters: it establishes your baseline so progress is measurable, not vibes.</p></div>
+    <div class="faq-item"><h3 class="faq-q">What does the free audit include?</h3><p class="faq-a">Twenty-five standardized customer-style queries run across five AI platforms within a 24-hour window; your 0–100 AI Visibility Score; a competitor share-of-voice breakdown; any factual errors AI engines are spreading about your business; and a prioritized fix list ordered by impact. The report is yours with no obligation — implement it yourself or ask about a retainer.</p></div>
+    <div class="faq-item"><h3 class="faq-q">What areas do you serve?</h3><p class="faq-a">Midnight Signal Studio is based in Concord, California and works with local businesses throughout Contra Costa County and the East Bay — Walnut Creek, Pleasant Hill, Clayton, Martinez, and surrounding communities. Prefer to meet in person over coffee? That's the default around here. Remote engagements are available anywhere.</p></div>
   </div>
 </div>
 
 <div class="section-divider"></div>
 
-<!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="cta-glow"></div>
   <h2 class="section-title">Get your free audit</h2>
-  <p class="section-sub">
-    The initial snapshot audit is complimentary — no obligation, no pitch deck. Just your score, your competitive position, and a clear picture of where you stand. Book a 20-minute coffee chat to get started.
-  </p>
+  <p class="section-sub">The initial snapshot audit is complimentary — no obligation, no pitch deck. Just your score, your competitive position, and a clear picture of where you stand. Book a 20-minute coffee chat to get started.</p>
 
   <form class="contact-form" id="contact-form" action="https://formspree.io/f/xeebdzvb" method="POST">
-
     <div class="form-row">
-      <div class="form-group">
-        <label class="form-label" for="cf-name">Your Name</label>
-        <input class="form-input" id="cf-name" name="name" type="text" placeholder="First Last" required autocomplete="off">
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="cf-biz">Business Name</label>
-        <input class="form-input" id="cf-biz" name="business" type="text" placeholder="Your Business" required autocomplete="off">
-      </div>
+      <div class="form-group"><label class="form-label" for="cf-name">Your Name</label><input class="form-input" id="cf-name" name="name" type="text" placeholder="First Last" required autocomplete="off"></div>
+      <div class="form-group"><label class="form-label" for="cf-biz">Business Name</label><input class="form-input" id="cf-biz" name="business" type="text" placeholder="Your Business" required autocomplete="off"></div>
     </div>
-
     <div class="form-row">
-      <div class="form-group">
-        <label class="form-label" for="cf-phone">Phone Number</label>
-        <input class="form-input" id="cf-phone" name="phone" type="tel" placeholder="925-000-0000" autocomplete="off">
-      </div>
+      <div class="form-group"><label class="form-label" for="cf-phone">Phone Number</label><input class="form-input" id="cf-phone" name="phone" type="tel" placeholder="925-000-0000" autocomplete="off"></div>
       <div class="form-group">
         <label class="form-label" for="cf-niche">Business Type</label>
         <select class="form-input form-select" id="cf-niche" name="category" required>
@@ -1256,49 +387,23 @@
         </select>
       </div>
     </div>
-
     <div class="form-group form-full">
       <label class="form-label">Preferred Contact Method</label>
       <div class="radio-row">
-        <label class="radio-opt">
-          <input type="radio" name="preferred_contact" value="email" checked>
-          <span>Email me</span>
-        </label>
-        <label class="radio-opt">
-          <input type="radio" name="preferred_contact" value="call">
-          <span>Call me</span>
-        </label>
-        <label class="radio-opt">
-          <input type="radio" name="preferred_contact" value="either">
-          <span>Either works</span>
-        </label>
+        <label class="radio-opt"><input type="radio" name="preferred_contact" value="email" checked><span>Email me</span></label>
+        <label class="radio-opt"><input type="radio" name="preferred_contact" value="call"><span>Call me</span></label>
+        <label class="radio-opt"><input type="radio" name="preferred_contact" value="either"><span>Either works</span></label>
       </div>
     </div>
-
-    <div class="form-group form-full" id="email-group">
-      <label class="form-label" for="cf-email">Email Address</label>
-      <input class="form-input" id="cf-email" name="email" type="email" placeholder="you@yourbusiness.com" autocomplete="off" required>
-    </div>
-
-    <div class="form-group form-full">
-      <label class="form-label" for="cf-message">Anything you want me to know? <span style="opacity:0.4">(optional)</span></label>
-      <textarea class="form-input form-textarea" id="cf-message" name="message" placeholder="Tell me a bit about your business, any concerns, or just say hi..."></textarea>
-    </div>
-
-    <!-- Honeypot: bots fill it, humans never see it. Formspree ignores _gotcha submissions. -->
-    <div class="hp-field" aria-hidden="true">
-      <label for="cf-gotcha">Leave this field empty</label>
-      <input id="cf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-    </div>
-
+    <div class="form-group form-full" id="email-group"><label class="form-label" for="cf-email">Email Address</label><input class="form-input" id="cf-email" name="email" type="email" placeholder="you@yourbusiness.com" autocomplete="off" required></div>
+    <div class="form-group form-full"><label class="form-label" for="cf-message">Anything you want me to know? <span style="opacity:0.4">(optional)</span></label><textarea class="form-input form-textarea" id="cf-message" name="message" placeholder="Tell me a bit about your business, any concerns, or just say hi..."></textarea></div>
+    <div class="hp-field" aria-hidden="true"><label for="cf-gotcha">Leave this field empty</label><input id="cf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
     <input type="hidden" name="_subject" value="New GEO Audit Request — Midnight Signal Studio">
-
     <div class="form-submit-wrap">
       <button type="submit" class="btn-primary" id="submit-btn">Request My Free Audit</button>
       <div class="form-note">No spam. No pitch deck. Just your score and a clear picture of where you stand.</div>
       <div class="form-error" id="form-error">Transmission interrupted — please try again, or email us directly below.</div>
     </div>
-
   </form>
 
   <div class="form-success" id="form-success">
@@ -1307,30 +412,20 @@
     <div class="success-body">We'll be in touch within 24 hours to schedule your free audit call. Keep an eye on your inbox.</div>
   </div>
 
-  <div class="direct-line">
-    Prefer email? Reach us directly at <a href="#" id="direct-email">[enable JavaScript to view]</a>
-  </div>
-
+  <div class="direct-line">Prefer email? Reach us directly at <a href="#" id="direct-email">[enable JavaScript to view]</a></div>
   <div class="gold-rule"></div>
 </section>
 
 <script>
-/* ---- Email toggle for "Call me" ---- */
 document.querySelectorAll('input[name="preferred_contact"]').forEach(r=>{
   r.addEventListener('change',function(){
     const eg=document.getElementById('email-group');
     const em=document.getElementById('cf-email');
-    if(this.value==='call'){
-      eg.style.display='none';
-      em.removeAttribute('required');
-    } else {
-      eg.style.display='flex';
-      em.setAttribute('required','');
-    }
+    if(this.value==='call'){ eg.style.display='none'; em.removeAttribute('required'); }
+    else { eg.style.display='flex'; em.setAttribute('required',''); }
   });
 });
 
-/* ---- AJAX submit to Formspree (visitor never leaves the page) ---- */
 document.getElementById('contact-form').addEventListener('submit', async function(e){
   e.preventDefault();
   const form=this;
@@ -1340,22 +435,12 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   btn.textContent='Sending...';
   btn.style.opacity='0.6';
   btn.disabled=true;
-
   try{
-    const response=await fetch(form.action,{
-      method:'POST',
-      body:new FormData(form),
-      headers:{'Accept':'application/json'}
-    });
+    const response=await fetch(form.action,{ method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
     if(response.ok){
       form.style.opacity='0';
-      setTimeout(()=>{
-        form.style.display='none';
-        document.getElementById('form-success').style.display='block';
-      },400);
-    } else {
-      throw new Error('Formspree error');
-    }
+      setTimeout(()=>{ form.style.display='none'; document.getElementById('form-success').style.display='block'; },400);
+    } else { throw new Error('Formspree error'); }
   } catch(error){
     err.style.display='block';
     btn.textContent='Request My Free Audit';
@@ -1364,9 +449,8 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   }
 });
 
-/* ---- Scraper-resistant fallback email (assembled at runtime) ---- */
 (function(){
-  const u='signal';                       /* change to your preferred alias */
+  const u='signal';
   const d='midnightsignalstudio.com';
   const a=u+'\u0040'+d;
   const el=document.getElementById('direct-email');
@@ -1375,7 +459,6 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 })();
 </script>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-left">© 2026 Midnight Signal Studio &middot; Concord, CA &middot; midnightsignalstudio.com</div>
   <div class="footer-tagline">Reject the rot. Return to reason.</div>
