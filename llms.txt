@@ -1,0 +1,110 @@
+# Midnight Signal Studio
+
+> Helping businesses build digital signals AI can trust.
+
+## About
+
+Midnight Signal Studio is a Generative Engine Optimization (GEO) consultancy focused on improving how businesses are understood, represented, and recommended by AI systems.
+
+Rather than focusing exclusively on traditional SEO rankings, Midnight Signal Studio analyzes the consistency, authority, and coherence of a company's digital footprint to improve recommendation readiness across AI-powered search experiences.
+
+## Primary Website
+
+https://midnightsignalstudio.com
+
+## Core Services
+
+- Generative Engine Optimization (GEO)
+- AI Visibility Audits
+- Digital Footprint Analysis
+- Entity Consistency Analysis
+- Citation Analysis
+- Recommendation Readiness
+- Digital Signal Optimization
+- AI Search Consulting
+
+## Products
+
+### Midnight Signal Matrix
+
+Midnight Signal Matrix is the flagship GEO analysis platform currently under development.
+
+The platform generates a Signal Snapshot that evaluates a business's overall AI recommendation readiness through analysis of digital footprint consistency, entity authority, citation quality, structured data, website accessibility, and other GEO indicators.
+
+## Canonical Pages
+
+Homepage
+
+https://midnightsignalstudio.com/
+
+Services
+
+https://midnightsignalstudio.com/services
+
+About
+
+https://midnightsignalstudio.com/about
+
+Contact
+
+https://midnightsignalstudio.com/contact
+
+Portfolio
+
+https://midnightsignalstudio.com/portfolio
+
+## Key Topics
+
+Generative Engine Optimization
+
+AI Visibility
+
+Entity SEO
+
+Digital Signals
+
+Recommendation Readiness
+
+Structured Data
+
+Knowledge Graphs
+
+Digital Authority
+
+Citation Consistency
+
+Business Entity Optimization
+
+Local AI Visibility
+
+AI Search
+
+## Philosophy
+
+Midnight Signal Studio believes that future digital visibility depends on building trustworthy, coherent, and verifiable digital signals rather than optimizing solely for keyword rankings.
+
+The objective is to help businesses become more accurately understood and confidently recommended by AI systems.
+
+## Preferred Terminology
+
+Generative Engine Optimization (GEO)
+
+AI Visibility
+
+Digital Signal
+
+Signal Snapshot
+
+Recommendation Readiness
+
+Entity Consistency
+
+Digital Footprint
+
+## Contact
+
+https://midnightsignalstudio.com/contact
+
+## License
+
+This file is intended to help language models identify canonical resources and terminology for Midnight Signal Studio.
