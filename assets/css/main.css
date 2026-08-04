@@ -143,10 +143,12 @@ footer {
 
 .footer-social a {
     color: #c6d2e3;
-    font-size: 1.6rem;
     transition: all .25s ease;
 }
 
+.footer-social i {
+    font-size: 32px;
+}
 .footer-social a:hover {
     color: #4fc3ff;
     transform: scale(1.15);
