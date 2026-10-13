@@ -82,14 +82,18 @@
 <body>
   <main>
     <h1>Privacy Policy — MSS Core Scanner</h1>
-    <p class="updated">Effective date: September 22, 2026</p>
+    <p class="updated">Effective date: October 13, 2026</p>
 
     <div class="notice">
       <strong>In brief:</strong>
       MSS Core Scanner is a website and AI-visibility auditing tool developed by
       Midnight Signal Studio. The scanner analyzes publicly accessible website
-      information supplied for an audit. Optional AI-assisted reporting may send
+      information supplied for an audit. Google sign-in identifies your account,
+      and our server stores account-linked credit balances, purchase records, and
+      completed reports so they can be recovered after reinstalling the app.
+      Optional AI-assisted reporting may send
       selected audit information to the AI provider chosen for that report.
+      <a href="#account-deletion">Request account and data deletion</a>.
     </div>
 
     <h2>1. Who We Are</h2>
@@ -113,6 +117,39 @@
       <li>The user's selected AI reporting provider, if AI-assisted reporting is requested.</li>
     </ul>
 
+    <h2>Accounts and Google Sign-In</h2>
+    <p>
+      Sign-in is required before scans and purchases. We use Google sign-in through
+      Firebase Authentication. This processes your Google account email address,
+      a unique user identifier, and profile information returned by Google, such
+      as your display name and profile-photo URL when provided. Authentication
+      tokens let our server verify your identity. We do not receive your Google
+      password or access to your Gmail messages or contact list through this sign-in.
+    </p>
+    <p>
+      Firebase Authentication also processes IP addresses and technical information
+      such as SDK version, device platform, and application identifiers to operate
+      authentication and help prevent abuse. Our hosting services may retain request
+      and diagnostic logs, including IP addresses, request metadata, and errors.
+    </p>
+
+    <h2>Purchases, Credits, and Subscriptions</h2>
+    <p>
+      Google Play processes purchases, payment details, subscription renewals,
+      cancellations, and refunds. We do not receive your full payment-card number.
+      Our app and server process purchase identifiers and verification tokens,
+      product identifiers, quantities, and subscription status or expiry information
+      to verify purchases and provide the correct access.
+    </p>
+    <p>
+      We store account-linked credit balances, purchase-fulfillment records,
+      subscription verification information, and scan-usage records in Cloud
+      Firestore. We also send Google Play a pseudonymous account identifier derived
+      from your app user ID to associate purchases with the correct MSS account.
+      These records support restoration, prevent duplicate grants, enforce the
+      one-free-quick-scan allowance, and help prevent unauthorized use.
+    </p>
+
     <h2>3. Public Website Information We Analyze</h2>
     <p>
       MSS Core Scanner retrieves publicly accessible information from the website
@@ -133,7 +170,10 @@
     <p>
       Information submitted to MSS Core Scanner is used to perform the requested
       audit and generate the resulting GEO (Generative Engine Optimization)
-      analysis.
+      analysis. Account and usage information is also used to authenticate users,
+      verify purchases, maintain balances and subscription access, recover completed
+      reports, enforce usage limits, process support and deletion requests, and
+      protect the service against abuse.
     </p>
 
     <p>
@@ -173,10 +213,22 @@
 
     <h2>7. Data Storage and Retention</h2>
     <p>
-      The scanner server processes audit requests and returns the resulting
-      audit to the requesting application. The current scanner server
-      implementation does not contain a user-account database or a persistent
-      database for storing completed scan results.
+      Firebase Authentication maintains account identity records. Cloud Firestore
+      stores account-linked balances, purchase and subscription records, free-scan
+      usage, scan-operation records, completed reports, rate-limit records, and
+      account-deletion requests. Reports can include the business details and public
+      website information described above. The app also saves scan history and
+      certain application records locally on your device.
+    </p>
+
+    <p>
+      Account and report records are retained while the account is maintained to
+      provide recovery and service functionality, unless deleted following a
+      verified request. Operational and security records are retained for service
+      operation, troubleshooting, and abuse prevention. Following account deletion,
+      limited transaction or security records may be retained where needed for
+      fraud prevention, disputes, or legal obligations, and only for as long as
+      those purposes require. Deleting the app does not itself delete server data.
     </p>
 
     <p>
@@ -187,6 +239,15 @@
     </p>
 
     <h2>8. Third-Party Services</h2>
+    <p>
+      We use Google Firebase Authentication for account sign-in, Cloud Firestore
+      for server-stored records, Google Cloud hosting for the scanner backend,
+      and Google Play for billing and purchase verification. These services process
+      the information needed to perform those functions. Relevant information is
+      described in <a href="https://firebase.google.com/support/privacy">Firebase's
+      privacy information</a> and <a href="https://policies.google.com/privacy">Google's
+      Privacy Policy</a>.
+    </p>
     <p>
       When optional AI functionality is used, MSS Core Scanner may communicate
       with third-party AI services in order to generate the requested report.
@@ -203,9 +264,36 @@
     <h2>9. Security</h2>
     <p>
       We take reasonable measures appropriate to the application to protect
-      information handled by MSS Core Scanner. However, no method of transmitting
+      information handled by MSS Core Scanner. App-to-service communications use
+      HTTPS, and access to account data is checked by our server. However, no method of transmitting
       or storing information over the Internet can be guaranteed to be completely
       secure.
+    </p>
+
+    <h2 id="account-deletion">Account and Data Deletion</h2>
+    <p>
+      You can request deletion from the app using <strong>Request account deletion</strong>,
+      or without reinstalling the app by emailing
+      <a href="mailto:signal@midnightsignalstudio.com?subject=MSS%20Core%20Scanner%20account%20deletion">signal@midnightsignalstudio.com</a>
+      with the subject <strong>MSS Core Scanner account deletion</strong>. Identify
+      the Google account email used for MSS. Do not send passwords, payment-card
+      details, or purchase tokens. We verify account ownership before processing requests.
+    </p>
+    <p>
+      Requests are processed manually; the in-app request records your request and
+      pauses account use rather than instantly erasing records. Deletion covers
+      your Firebase account, server-stored reports, credit balance, and associated
+      account and usage records, subject to the limited retention described above.
+      You can contact the same email address for request status. Scan history stored
+      only on your device can be removed through the app's history controls or by
+      clearing app data; server deletion does not remotely erase device-local copies.
+    </p>
+    <p>
+      Deleting an MSS account does not cancel a Google Play subscription or
+      automatically refund purchases. Manage or cancel subscriptions through
+      Google Play's <strong>Payments and subscriptions</strong> settings to stop
+      future renewal. Google may retain its own payment and account records under
+      its applicable policies.
     </p>
 
     <h2>10. Children's Privacy</h2>
@@ -224,9 +312,9 @@
 
     <h2>12. Contact</h2>
     <p>
-      Questions regarding this Privacy Policy or MSS Core Scanner may be directed
-      to Midnight Signal Studio through the official Midnight Signal Studio
-      website.
+      Questions, privacy requests, and account-deletion requests may be directed
+      to Midnight Signal Studio at
+      <a href="mailto:signal@midnightsignalstudio.com">signal@midnightsignalstudio.com</a>.
     </p>
 
     <footer>
