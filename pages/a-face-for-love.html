@@ -95,7 +95,7 @@
       .wrap { width:calc(100% - 40px); }
       .masthead { padding-block:20px; }
       .wordmark { font-size:10px; letter-spacing:.12em; }
-      .masthead-note { font-size:12px; }
+      .masthead-note { display:none; }
       .hero { grid-template-columns:1fr; gap:42px; padding-block:42px 45px; }
       h1 { font-size:54px; max-width:500px; }
       .hero .eyebrow { margin-bottom:19px; }
@@ -106,11 +106,13 @@
       .hero figure { max-width:350px; width:calc(100% - 20px); justify-self:center; }
       .art { padding:12px 12px 0; transform:rotate(1deg); }
       .art-caption { margin-top:20px; }
+      .art-label { flex-direction:column; align-items:flex-start; }
+      .art-label span { text-align:left; }
       .intro, .questions { grid-template-columns:1fr; gap:25px; padding-block:45px; }
       .intro-copy { padding-top:0; }
       .offer { padding-block:45px; }
-      .section-top { align-items:flex-start; gap:20px; }
-      .price { padding-left:15px; }
+      .section-top { flex-direction:column; align-items:flex-start; gap:20px; }
+      .price { border-left:0; border-top:1px solid var(--rule); padding:16px 0 0; width:100%; }
       .price strong { font-size:30px; }
       .offer-list { grid-template-columns:1fr; gap:25px; }
       .offer-list li { position:relative; padding:22px 0 0 40px; }
